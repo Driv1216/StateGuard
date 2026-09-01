@@ -1,0 +1,11 @@
+{
+  "scope": "offline_focused_tests_only",
+  "command": "UV_CACHE_DIR=/tmp/state_guard_uv_cache uv run pytest -q",
+  "collected": 30,
+  "passed": 30,
+  "failed": 0,
+  "warnings": 1,
+  "warning_summary": "Starlette TestClient deprecates the httpx compatibility path in favor of httpx2; this does not affect test results or the frozen runtime behavior.",
+  "gemini_called": false,
+  "frozen_benchmark_run": false
+}

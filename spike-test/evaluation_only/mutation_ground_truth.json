@@ -1,0 +1,6 @@
+{
+  "fixture_01": "CORRECT",
+  "fixture_02": "DUPLICATE_SIDE_EFFECT",
+  "fixture_03": "PREMATURE_FULFILMENT"
+}
+

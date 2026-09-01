@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0",
+  "experiment": {
+    "id": "stateguard_irreversible_fulfilment_spike_v1",
+    "thesis": "A real LLM can infer merchant-specific irreversible fulfilment actions better than the frozen static baseline, allowing the same deterministic engine to catch materially more seeded payment-safety defects without increasing false critical findings.",
+    "evaluation_state": "PRE_EVALUATION_ONLY"
+  },
+  "benchmarks": [
+    {
+      "id": "ecommerce",
+      "family_source_sha256": "40a9d29e210e2b35c44921128425a115720a91854afab9513ed7b2843cd02c6c",
+      "fixtures": {
+        "fixture_01": "40a9d29e210e2b35c44921128425a115720a91854afab9513ed7b2843cd02c6c",
+        "fixture_02": "c8d377c08dc00ad6445801b2401cfa261bed4b5a9b5c35200dc5243dab27cb29",
+        "fixture_03": "7d43ce94d78e0dde33bb8f52d98b98551575c6cdbc923d85d4705f375551b836"
+      }
+    },
+    {
+      "id": "saas",
+      "family_source_sha256": "a79a5f7198af5726512819c270cf1abb69ad6eeed4eefad369108ba379342fde",
+      "fixtures": {
+        "fixture_01": "a79a5f7198af5726512819c270cf1abb69ad6eeed4eefad369108ba379342fde",
+        "fixture_02": "01178482e34081c5bdbfaa1fa7e4cb2be24d38fb111920a68fe76e36f8de6108",
+        "fixture_03": "3ac2c4ab63792f6dc71039c92b477db4fb0901be1e0ac83c865e426583c2e04b"
+      }
+    },
+    {
+      "id": "course",
+      "family_source_sha256": "1504c789c990000c5a8b67372953d60e943b387d1b70a03a82f9dd1b8d5f8a60",
+      "fixtures": {
+        "fixture_01": "1504c789c990000c5a8b67372953d60e943b387d1b70a03a82f9dd1b8d5f8a60",
+        "fixture_02": "475f6590bc015056b8c3386fa42f1452c78e066f9f1e8b2b4d7be76994e2cde3",
+        "fixture_03": "82adf5c4160bc61639969b5311f1e92a3fb3d3a76109d2c46be2d3819c9f97db"
+      }
+    },
+    {
+      "id": "ticketing",
+      "family_source_sha256": "e5517fe39d8a461e01638fe6ef5385daab22d8da3bf5d7d50e773e10a7e32bb2",
+      "fixtures": {
+        "fixture_01": "e5517fe39d8a461e01638fe6ef5385daab22d8da3bf5d7d50e773e10a7e32bb2",
+        "fixture_02": "340a46a6e0a015ed9091d3708c19c0e5937911d568f94085d366199f9c0108ac",
+        "fixture_03": "e82ecf20f97c14d734afdd16e5f3f7e59d2d6d312cfc7c0a8bdb9b92b61ec3ee"
+      }
+    },
+    {
+      "id": "workspace",
+      "family_source_sha256": "5c5397b33345d76016d8cf813c748c052d23c8b0e6bbd0136b43fd0b9d0c12f6",
+      "fixtures": {
+        "fixture_01": "5c5397b33345d76016d8cf813c748c052d23c8b0e6bbd0136b43fd0b9d0c12f6",
+        "fixture_02": "055fc252d0c3dcdf746492e6b21cf4bd0278f7302710675a37165a41ac144840",
+        "fixture_03": "d7d970702489b489853a725475f1cc8066e7a6b13301e3d6ca1f84314bd4ff35"
+      }
+    },
+    {
+      "id": "licensing",
+      "family_source_sha256": "5e5b63c8ea145e2efbe04dda1041538eb23692dfb409d5a8b32dff276144301c",
+      "fixtures": {
+        "fixture_01": "5e5b63c8ea145e2efbe04dda1041538eb23692dfb409d5a8b32dff276144301c",
+        "fixture_02": "61ce7e05613a1273a83da7c59bbf1c82ef4ad278d70383c61941e5442f5cf1b6",
+        "fixture_03": "1b32cd91a17e52ba5e3d7bfe3b45b853a994fc6555391a7d67fe517cdb506a71"
+      }
+    }
+  ],
+  "role_taxonomy": [
+    {
+      "id": "IRREVERSIBLE_FULFILMENT",
+      "definition": "A merchant-side business action that grants, provides, issues, activates, allocates, ships, unlocks or otherwise delivers the product, service, or value the customer paid for."
+    }
+  ],
+  "fixtures": {
+    "families": 6,
+    "per_family": 3,
+    "total": 18,
+    "correct": 6,
+    "defective": 12
+  },
+  "mutations": [
+    {"id": "DUPLICATE_SIDE_EFFECT", "count": 6, "target_invariant": "SG-02"},
+    {"id": "PREMATURE_FULFILMENT", "count": 6, "target_invariant": "SG-03"}
+  ],
+  "scenarios": [
+    {
+      "id": "S1",
+      "name": "NORMAL_CAPTURE",
+      "events": [
+        {
+          "id": "evt_capture_001",
+          "type": "payment.captured",
+          "payment": {
+            "id": "pay_benchmark_001",
+            "customer_id": "customer_001",
+            "order_id": "order_001",
+            "product_id": "product_001",
+            "amount": 4900,
+            "address": "14 Benchmark Road",
+            "region": "ap-south",
+            "cost_center": "CC-01",
+            "term_code": "annual",
+            "reseller_id": "direct"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "name": "DUPLICATE_CAPTURE",
+      "events": [
+        {
+          "id": "evt_capture_dup_001",
+          "type": "payment.captured",
+          "payment": {
+            "id": "pay_benchmark_002",
+            "customer_id": "customer_002",
+            "order_id": "order_002",
+            "product_id": "product_002",
+            "amount": 5900,
+            "address": "15 Benchmark Road",
+            "region": "ap-south",
+            "cost_center": "CC-02",
+            "term_code": "annual",
+            "reseller_id": "direct"
+          }
+        },
+        {
+          "id": "evt_capture_dup_001",
+          "type": "payment.captured",
+          "payment": {
+            "id": "pay_benchmark_002",
+            "customer_id": "customer_002",
+            "order_id": "order_002",
+            "product_id": "product_002",
+            "amount": 5900,
+            "address": "15 Benchmark Road",
+            "region": "ap-south",
+            "cost_center": "CC-02",
+            "term_code": "annual",
+            "reseller_id": "direct"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "name": "AUTHORIZED_ONLY",
+      "events": [
+        {
+          "id": "evt_authorized_001",
+          "type": "payment.authorized",
+          "payment": {
+            "id": "pay_benchmark_003",
+            "customer_id": "customer_003",
+            "order_id": "order_003",
+            "product_id": "product_003",
+            "amount": 6900,
+            "address": "16 Benchmark Road",
+            "region": "ap-south",
+            "cost_center": "CC-03",
+            "term_code": "annual",
+            "reseller_id": "direct"
+          }
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    {"id": "SG-01", "name": "NORMAL_CAPTURE_FULFILS_ONCE", "scenario": "S1", "comparator": "==", "expected": 1},
+    {"id": "SG-02", "name": "DUPLICATE_EVENT_NO_DUPLICATE_EFFECT", "scenario": "S2", "comparator": "<=", "expected": 1},
+    {"id": "SG-03", "name": "FULFIL_ONLY_AFTER_CAPTURE", "scenario": "S3", "comparator": "==", "expected": 0}
+  ],
+  "baseline": {
+    "algorithm": "frozen_ast_static_v1",
+    "positive_lexicon": ["fulfill", "fulfil", "ship", "deliver", "grant", "activate", "provision", "issue", "unlock"],
+    "exclusion_lexicon": ["notify", "notification", "email", "sms", "analytic", "log", "persist", "save", "payment", "refund", "inventory", "cache", "webhook", "signature", "validate"],
+    "known_razorpay_references": ["razorpay", "razorpay.Client", "razorpay.utility.verify_webhook_signature", "razorpay.payment.fetch"],
+    "weights": {
+      "positive_identifier": 6,
+      "positive_body": 3,
+      "direct_captured": 5,
+      "transitive_captured": 3,
+      "webhook_reachable": 2,
+      "stateful_effect": 2,
+      "leaf_like": 1,
+      "exclusion_identifier": -5,
+      "authorized_only": -5,
+      "route_or_parser": -3
+    },
+    "maximum_transitive_depth": 3,
+    "selection_threshold": 9,
+    "implementation_sha256": "5dfd48c1ccc50e691cfb946889be2996eda8ec125bc70dccf218c22e7ba8ca51",
+    "calibration_fixtures": {
+      "document_export": "24d1bd98dd7c636d1a452f7f0db04057b8b32891999eb91a5128c49270cad4ea",
+      "device_enrollment": "90373495204cbdecd837ad5a6d6a3a48d531553c9c65574bd36fd31e167432fa"
+    }
+  },
+  "ai_mapper": {
+    "provider": "Google Gemini",
+    "model": "gemini-3.6-flash",
+    "temperature": 0,
+    "candidate_count": 1,
+    "max_output_tokens": 4096,
+    "response_mime_type": "application/json",
+    "tools": [],
+    "search": false,
+    "code_execution": false,
+    "embeddings": false,
+    "fallback": null,
+    "max_transport_retries": 2,
+    "retryable_failures": ["CONNECTION", "HTTP_429", "HTTP_5XX"],
+    "retry_backoff_seconds": [1, 2],
+    "prompt_implementation_sha256": "9dc67b1a5c954aa4879b830718dee4abbbd7de79b0b531623f11790d43800465",
+    "schema_implementation_sha256": "8eefcf7ea3013631e5cff60be594f5f2a03a9a65081a243df5c70f4c276f02c8"
+  },
+  "mapping_resolution": {
+    "UNIQUE": "exactly one valid existing role symbol; run fulfilment-specific scenarios",
+    "UNMAPPED": "zero valid existing role symbols; UNVERIFIED and skip scenarios",
+    "AMBIGUOUS": "more than one valid existing role symbol; UNVERIFIED and skip scenarios",
+    "hallucinations_are_instrumented": false,
+    "multiple_candidates_are_aggregated": false
+  },
+  "metrics": {
+    "semantic_precision": "TP / (TP + FP), with hallucinations in FP",
+    "semantic_recall": "TP / 6",
+    "semantic_f1": "2PR / (P + R)",
+    "non_obvious_recall": "correct ticketing/workspace/licensing roles / 3",
+    "seeded_defect_recall": "credited mutation-specific failures / 12; UNVERIFIED families contribute misses",
+    "mutation_kill_rate": "credited killed mutants / 12",
+    "false_critical_findings": "actual invariant FAIL results on correct fixtures",
+    "correct_integration_pass_rate": "correct fixtures with UNIQUE mapping passing all invariants / 6",
+    "unique_mapping_coverage": "UNIQUE families / 6",
+    "ambiguous_family_count": "number of AMBIGUOUS families",
+    "unmapped_family_count": "number of UNMAPPED families",
+    "evidence_trace_completeness": "complete credited finding traces / all credited findings",
+    "ai_lift": "AI seeded defect recall minus baseline seeded defect recall"
+  },
+  "pass_conditions": [
+    {"id": "PC-01", "definition": "AI role recall >= 5/6"},
+    {"id": "PC-02", "definition": "AI identifies >= 2/3 non-obvious roles"},
+    {"id": "PC-03", "definition": "AI critical-role precision >= 90%"},
+    {"id": "PC-04", "definition": "AI hallucinated symbol count == 0"},
+    {"id": "PC-05", "definition": "AI deterministic defect recall >= 10/12"},
+    {"id": "PC-06", "definition": "AI defect-recall lift >= 25 percentage points or >= 3 additional defects"},
+    {"id": "PC-07", "definition": "AI false critical findings on correct integrations == 0"},
+    {"id": "PC-08", "definition": "All six AI-backed correct integrations pass normal capture"},
+    {"id": "PC-09", "definition": "100% of AI defect findings have structured deterministic traces"},
+    {"id": "PC-10", "definition": "Invariant engine alone owns PASS/FAIL authority"}
+  ],
+  "truth_commitments": {
+    "role_ground_truth_sha256": "18b3123910e9b65c8cb7a91b28eee1459b7c7e0d9237a346ee0cccf3f931a2b6",
+    "mutation_ground_truth_sha256": "5fc6eb5bf76ea781e12d5512a897de4a5d4221d84d982f5621ffe5df117710c6"
+  },
+  "dependencies": {
+    "python": "3.11.15",
+    "fastapi": "0.141.1",
+    "httpx": "0.28.1",
+    "google-genai": "2.17.0",
+    "pydantic": "2.13.4",
+    "pytest": "9.1.1"
+  }
+}

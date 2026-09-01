@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "stateguard"
+version = "0.1.0"
+description = "Local-first reliability auditor for Razorpay integrations"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "google-genai>=1.30,<2",
+  "httpx>=0.28,<1",
+  "pydantic>=2.13.4,<3",
+  "PyYAML>=6,<7",
+  "ruamel.yaml>=0.18,<1",
+]
+
+[project.optional-dependencies]
+managed-fastapi = [
+  "fastapi>=0.141.1,<0.142",
+  "uvicorn>=0.52.4,<0.53",
+]
+
+[project.scripts]
+stateguard = "stateguard.cli.main:run"
+
+[dependency-groups]
+dev = [
+  "fastapi>=0.141.1,<0.142",
+  "mypy>=1.17,<2",
+  "pytest>=9,<10",
+  "ruff>=0.12,<1",
+  "uvicorn>=0.52.4,<0.53",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/dashboard",
+  "/src/stateguard",
+  "/docs/RUNTIME_CAPABILITY.md",
+  "/README.md",
+  "/pyproject.toml",
+]
+exclude = [
+  "/dashboard/node_modules",
+  "/dashboard/*.tsbuildinfo",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stateguard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+norecursedirs = ["spike-test", ".venv", "dist", "build"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+plugins = ["pydantic.mypy"]
+files = ["src"]

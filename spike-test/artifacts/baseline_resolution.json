@@ -1,0 +1,119 @@
+[
+  {
+    "family": "ecommerce",
+    "candidate_symbols": [
+      {
+        "symbol": "app.domain.ship_order",
+        "score": 16,
+        "confidence": 1.0
+      }
+    ],
+    "resolution": "UNIQUE",
+    "selected_symbol": "app.domain.ship_order"
+  },
+  {
+    "family": "saas",
+    "candidate_symbols": [
+      {
+        "symbol": "app.domain.grant_subscription_access",
+        "score": 16,
+        "confidence": 1.0
+      }
+    ],
+    "resolution": "UNIQUE",
+    "selected_symbol": "app.domain.grant_subscription_access"
+  },
+  {
+    "family": "course",
+    "candidate_symbols": [
+      {
+        "symbol": "app.domain.unlock_course",
+        "score": 16,
+        "confidence": 1.0
+      }
+    ],
+    "resolution": "UNIQUE",
+    "selected_symbol": "app.domain.unlock_course"
+  },
+  {
+    "family": "ticketing",
+    "candidate_symbols": [
+      {
+        "symbol": "app.domain.attach_event_tax_basis",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.bind_attendee_roster_row",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.mint_admission_pass",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.stamp_venue_reconciliation_entry",
+        "score": 10,
+        "confidence": 0.625
+      }
+    ],
+    "resolution": "AMBIGUOUS",
+    "selected_symbol": null
+  },
+  {
+    "family": "workspace",
+    "candidate_symbols": [
+      {
+        "symbol": "app.domain.attach_workspace_cost_center",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.bind_region_affinity",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.materialize_workspace_entitlement",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.snapshot_tenant_quota_basis",
+        "score": 10,
+        "confidence": 0.625
+      }
+    ],
+    "resolution": "AMBIGUOUS",
+    "selected_symbol": null
+  },
+  {
+    "family": "licensing",
+    "candidate_symbols": [
+      {
+        "symbol": "app.domain.allocate_license_seat",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.attach_reseller_attribution",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.bind_contract_term",
+        "score": 10,
+        "confidence": 0.625
+      },
+      {
+        "symbol": "app.domain.stamp_catalog_edition",
+        "score": 10,
+        "confidence": 0.625
+      }
+    ],
+    "resolution": "AMBIGUOUS",
+    "selected_symbol": null
+  }
+]

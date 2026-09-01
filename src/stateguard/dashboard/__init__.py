@@ -1,0 +1,1 @@
+"""Packaged StateGuard dashboard assets."""

@@ -1,0 +1,4244 @@
+{
+  "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+  "baseline": {
+    "execution": {
+      "mappings": {
+        "ecommerce": {
+          "schema_version": "1.0",
+          "application_id": "ecommerce",
+          "mapper_kind": "STATIC_BASELINE",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.ship_order",
+              "confidence": 1.0,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "Frozen static score 16: direct_captured=+5; leaf_like=+1; positive_identifier=+6; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "algorithm": "frozen_ast_static_v1",
+            "selection_threshold": 9,
+            "scores": {
+              "app.domain.persist_customer_profile": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.persist_payment_record": {
+                "score": 0,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.record_payment_analytics": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.reserve_inventory_item": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.send_receipt_notification": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.ship_order": {
+                "score": 16,
+                "contributions": {
+                  "positive_identifier": 6,
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.validate_webhook_signature": {
+                "score": -8,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5,
+                  "authorized_only": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.main.receive_webhook": {
+                "score": -4,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "exclusion_identifier": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.state.reset_state": {
+                "score": 1,
+                "contributions": {
+                  "leaf_like": 1
+                }
+              }
+            },
+            "razorpay_references": []
+          }
+        },
+        "saas": {
+          "schema_version": "1.0",
+          "application_id": "saas",
+          "mapper_kind": "STATIC_BASELINE",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.grant_subscription_access",
+              "confidence": 1.0,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "Frozen static score 16: direct_captured=+5; leaf_like=+1; positive_identifier=+6; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "algorithm": "frozen_ast_static_v1",
+            "selection_threshold": 9,
+            "scores": {
+              "app.domain.grant_subscription_access": {
+                "score": 16,
+                "contributions": {
+                  "positive_identifier": 6,
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.persist_customer_profile": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.persist_payment_record": {
+                "score": 0,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.persist_plan_catalog": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.record_payment_analytics": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.send_receipt_notification": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.validate_webhook_signature": {
+                "score": -8,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5,
+                  "authorized_only": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.main.receive_webhook": {
+                "score": -4,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "exclusion_identifier": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.state.reset_state": {
+                "score": 1,
+                "contributions": {
+                  "leaf_like": 1
+                }
+              }
+            },
+            "razorpay_references": []
+          }
+        },
+        "course": {
+          "schema_version": "1.0",
+          "application_id": "course",
+          "mapper_kind": "STATIC_BASELINE",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.unlock_course",
+              "confidence": 1.0,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "Frozen static score 16: direct_captured=+5; leaf_like=+1; positive_identifier=+6; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "algorithm": "frozen_ast_static_v1",
+            "selection_threshold": 9,
+            "scores": {
+              "app.domain.persist_cohort_row": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.persist_learner_profile": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.persist_payment_record": {
+                "score": 0,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.record_payment_analytics": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.send_receipt_notification": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.unlock_course": {
+                "score": 16,
+                "contributions": {
+                  "positive_identifier": 6,
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.validate_webhook_signature": {
+                "score": -8,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5,
+                  "authorized_only": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.main.receive_webhook": {
+                "score": -4,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "exclusion_identifier": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.state.reset_state": {
+                "score": 1,
+                "contributions": {
+                  "leaf_like": 1
+                }
+              }
+            },
+            "razorpay_references": []
+          }
+        },
+        "ticketing": {
+          "schema_version": "1.0",
+          "application_id": "ticketing",
+          "mapper_kind": "STATIC_BASELINE",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.attach_event_tax_basis",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 22,
+                  "line_end": 25,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.bind_attendee_roster_row",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.mint_admission_pass",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 10,
+                  "line_end": 13,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.stamp_venue_reconciliation_entry",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 16,
+                  "line_end": 19,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "algorithm": "frozen_ast_static_v1",
+            "selection_threshold": 9,
+            "scores": {
+              "app.domain.attach_event_tax_basis": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.bind_attendee_roster_row": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.mint_admission_pass": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.persist_customer_profile": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.persist_payment_record": {
+                "score": 0,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.record_payment_analytics": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.send_receipt_notification": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.stamp_venue_reconciliation_entry": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.validate_webhook_signature": {
+                "score": -8,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5,
+                  "authorized_only": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.main.receive_webhook": {
+                "score": -4,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "exclusion_identifier": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.state.reset_state": {
+                "score": 1,
+                "contributions": {
+                  "leaf_like": 1
+                }
+              }
+            },
+            "razorpay_references": []
+          }
+        },
+        "workspace": {
+          "schema_version": "1.0",
+          "application_id": "workspace",
+          "mapper_kind": "STATIC_BASELINE",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.attach_workspace_cost_center",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 16,
+                  "line_end": 19,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.bind_region_affinity",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 22,
+                  "line_end": 25,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.snapshot_tenant_quota_basis",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 10,
+                  "line_end": 13,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "algorithm": "frozen_ast_static_v1",
+            "selection_threshold": 9,
+            "scores": {
+              "app.domain.attach_workspace_cost_center": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.bind_region_affinity": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.materialize_workspace_entitlement": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.persist_customer_profile": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.persist_payment_record": {
+                "score": 0,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.record_payment_analytics": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.send_receipt_notification": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.snapshot_tenant_quota_basis": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.validate_webhook_signature": {
+                "score": -8,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5,
+                  "authorized_only": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.main.receive_webhook": {
+                "score": -4,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "exclusion_identifier": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.state.reset_state": {
+                "score": 1,
+                "contributions": {
+                  "leaf_like": 1
+                }
+              }
+            },
+            "razorpay_references": []
+          }
+        },
+        "licensing": {
+          "schema_version": "1.0",
+          "application_id": "licensing",
+          "mapper_kind": "STATIC_BASELINE",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.allocate_license_seat",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.attach_reseller_attribution",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 22,
+                  "line_end": 25,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.bind_contract_term",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 10,
+                  "line_end": 13,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.stamp_catalog_edition",
+              "confidence": 0.625,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 16,
+                  "line_end": 19,
+                  "explanation": "Frozen static score 10: direct_captured=+5; leaf_like=+1; stateful_effect=+2; webhook_reachable=+2"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "algorithm": "frozen_ast_static_v1",
+            "selection_threshold": 9,
+            "scores": {
+              "app.domain.allocate_license_seat": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.attach_reseller_attribution": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.bind_contract_term": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.persist_customer_profile": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.persist_payment_record": {
+                "score": 0,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.record_payment_analytics": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.send_receipt_notification": {
+                "score": 5,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5
+                }
+              },
+              "app.domain.stamp_catalog_edition": {
+                "score": 10,
+                "contributions": {
+                  "direct_captured": 5,
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1
+                }
+              },
+              "app.domain.validate_webhook_signature": {
+                "score": -8,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "leaf_like": 1,
+                  "exclusion_identifier": -5,
+                  "authorized_only": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.main.receive_webhook": {
+                "score": -4,
+                "contributions": {
+                  "webhook_reachable": 2,
+                  "stateful_effect": 2,
+                  "exclusion_identifier": -5,
+                  "route_or_parser": -3
+                }
+              },
+              "app.state.reset_state": {
+                "score": 1,
+                "contributions": {
+                  "leaf_like": 1
+                }
+              }
+            },
+            "razorpay_references": []
+          }
+        }
+      },
+      "resolutions": {
+        "ecommerce": {
+          "mapper_kind": "STATIC_BASELINE",
+          "family_id": "ecommerce",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "source_bundle_hash": "8e387bc81f2c9d89ea8b7a2deb571a702f3a8663608941e69575bc332c02596e",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 1,
+          "valid_symbols": [
+            "app.domain.ship_order"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "UNIQUE",
+          "selected_symbol": "app.domain.ship_order",
+          "explanation": "Exactly one valid role symbol was selected for deterministic instrumentation."
+        },
+        "saas": {
+          "mapper_kind": "STATIC_BASELINE",
+          "family_id": "saas",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "source_bundle_hash": "35f8a5cd1f21dab02afcc58e366296d07d097656d7caf55847fc72d6a24365bd",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 1,
+          "valid_symbols": [
+            "app.domain.grant_subscription_access"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "UNIQUE",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "explanation": "Exactly one valid role symbol was selected for deterministic instrumentation."
+        },
+        "course": {
+          "mapper_kind": "STATIC_BASELINE",
+          "family_id": "course",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "source_bundle_hash": "d1a515b5bf630f9465bcf80f849bcdb413f1567cc341ce615e9f82d7ce7c4537",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 1,
+          "valid_symbols": [
+            "app.domain.unlock_course"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "UNIQUE",
+          "selected_symbol": "app.domain.unlock_course",
+          "explanation": "Exactly one valid role symbol was selected for deterministic instrumentation."
+        },
+        "ticketing": {
+          "mapper_kind": "STATIC_BASELINE",
+          "family_id": "ticketing",
+          "mapping_hash": "e35bdf8373020dfbfce10c067d3ff4c9bcdf6671e6469e8b9d35654b528a31ea",
+          "source_bundle_hash": "d274da1b5a215ef85efe3b7a074b8ab499c3477167c93a3fc9f95e1f1fdf9763",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 4,
+          "valid_symbols": [
+            "app.domain.attach_event_tax_basis",
+            "app.domain.bind_attendee_roster_row",
+            "app.domain.mint_admission_pass",
+            "app.domain.stamp_venue_reconciliation_entry"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "AMBIGUOUS",
+          "selected_symbol": null,
+          "explanation": "4 valid role symbols were returned; no unique instrumentation target exists, so fulfilment-specific execution was skipped."
+        },
+        "workspace": {
+          "mapper_kind": "STATIC_BASELINE",
+          "family_id": "workspace",
+          "mapping_hash": "8bcc32227ff4638f8063eb5c165be925d92137be26401cf3d2d0d0dc56a50456",
+          "source_bundle_hash": "42f329ff6d843360aebd4074581f30a80ef49198eb933e960423c5d5d08d0a03",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 4,
+          "valid_symbols": [
+            "app.domain.attach_workspace_cost_center",
+            "app.domain.bind_region_affinity",
+            "app.domain.materialize_workspace_entitlement",
+            "app.domain.snapshot_tenant_quota_basis"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "AMBIGUOUS",
+          "selected_symbol": null,
+          "explanation": "4 valid role symbols were returned; no unique instrumentation target exists, so fulfilment-specific execution was skipped."
+        },
+        "licensing": {
+          "mapper_kind": "STATIC_BASELINE",
+          "family_id": "licensing",
+          "mapping_hash": "70157ed1d670cabbffc7e01815efe5ba528a3c2de525a2e5ec42dd2436a7fcfe",
+          "source_bundle_hash": "a146984b0ddba98e9611c529b9fa82e272e5014b289aa4110503c6c13a049466",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 4,
+          "valid_symbols": [
+            "app.domain.allocate_license_seat",
+            "app.domain.attach_reseller_attribution",
+            "app.domain.bind_contract_term",
+            "app.domain.stamp_catalog_edition"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "AMBIGUOUS",
+          "selected_symbol": null,
+          "explanation": "4 valid role symbols were returned; no unique instrumentation target exists, so fulfilment-specific execution was skipped."
+        }
+      },
+      "observations": [
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "7cb9a3fbda1ef0019f526700a1ffd9b796ff49ed934e9cadd4ce859555699361",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "7cb9a3fbda1ef0019f526700a1ffd9b796ff49ed934e9cadd4ce859555699361",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "7cb9a3fbda1ef0019f526700a1ffd9b796ff49ed934e9cadd4ce859555699361",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "81097af4273b92ac6f8e57a1ef0b7af1f4ec90924fac570fe114e210a1ebea1b",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "81097af4273b92ac6f8e57a1ef0b7af1f4ec90924fac570fe114e210a1ebea1b",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            },
+            {
+              "sequence": 2,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 2
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "81097af4273b92ac6f8e57a1ef0b7af1f4ec90924fac570fe114e210a1ebea1b",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "64edad785acd4fe195201a22de8e07ed4597d6cd9aa5aad9bd260334b12bed60",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "64edad785acd4fe195201a22de8e07ed4597d6cd9aa5aad9bd260334b12bed60",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "7d5a8d209d6d59a39fa7762f6d598312c2c2f61cbc468b02cec0507ff1f61662",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "64edad785acd4fe195201a22de8e07ed4597d6cd9aa5aad9bd260334b12bed60",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_authorized_001",
+              "payment_id": "pay_benchmark_003"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "f38f2270e6478296bcb0860587575f88de338bc8d9c47f190005e4e42b101621",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "f38f2270e6478296bcb0860587575f88de338bc8d9c47f190005e4e42b101621",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "f38f2270e6478296bcb0860587575f88de338bc8d9c47f190005e4e42b101621",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "efd1d9f5f6a85fff733b7aadf02358a665422efac3f5685fd43956dd5d5188c6",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "efd1d9f5f6a85fff733b7aadf02358a665422efac3f5685fd43956dd5d5188c6",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            },
+            {
+              "sequence": 2,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 2
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "efd1d9f5f6a85fff733b7aadf02358a665422efac3f5685fd43956dd5d5188c6",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "6af78a2ae82556ea7696ee8be20a5be445b2ef9e24b1d32a3a8bf46010178360",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "6af78a2ae82556ea7696ee8be20a5be445b2ef9e24b1d32a3a8bf46010178360",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "5620d0e7effeb61373f490fed4c403a6bdd5789f9e0869d0f7dc3c3f40d4c8f4",
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "6af78a2ae82556ea7696ee8be20a5be445b2ef9e24b1d32a3a8bf46010178360",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_authorized_001",
+              "payment_id": "pay_benchmark_003"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "4c8f5a7a31313abcb3fe64b1374af445a67e9c66e5e44faae4a3ec27104bc7da",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "4c8f5a7a31313abcb3fe64b1374af445a67e9c66e5e44faae4a3ec27104bc7da",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "4c8f5a7a31313abcb3fe64b1374af445a67e9c66e5e44faae4a3ec27104bc7da",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "9c06fcf3d15f217cfd45deecf3b5e016a8d988e8f10289d0cf46bbaab6497317",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "9c06fcf3d15f217cfd45deecf3b5e016a8d988e8f10289d0cf46bbaab6497317",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            },
+            {
+              "sequence": 2,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 2
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "9c06fcf3d15f217cfd45deecf3b5e016a8d988e8f10289d0cf46bbaab6497317",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "52cc770133c98d460d34ab9ef37be00470779528cd34f8b5778a3a204430ffab",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "52cc770133c98d460d34ab9ef37be00470779528cd34f8b5778a3a204430ffab",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "STATIC_BASELINE",
+          "mapping_hash": "a5a318be8b80ed8ad76a2d1f1436ff76f76a0f9b9a444a43f00c01d9d3ba2b84",
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "52cc770133c98d460d34ab9ef37be00470779528cd34f8b5778a3a204430ffab",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_authorized_001",
+              "payment_id": "pay_benchmark_003"
+            }
+          ],
+          "observed_count": 1
+        }
+      ],
+      "invariant_results": [
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "8648a9b5f8dcbf1c86cf7e41fa54ff2efaee431b700a8e48852879aa2b8d044d"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "cfb379cb1dec62b9b04029585f8491d14b19cec37aa0f55c335875d8f4227537"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "c57de7c3c18aa9bb8d6d507ef76975da9dc4e4cdc89b487ad6314cb2c1cb5a50"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "654a4dd107cd0b297a3d03269f979e6e38d9caf8190ef9bf49401668e4eae8fa"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 2,
+          "result": "FAIL",
+          "trace_hash": "c4cfb92bbc0bdaef5931d4ba580c6240adfcc27de7ae2c27284b55faf671bad9"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "377c538d9aa37865259210ef2490169bd85a9f765b0a2bf0fcdfe9b51f9403fd"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "976ec52617e2a142b92170ae0c7771afeabc095c1f3fb70e24733459955c338d"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "2ee43788b830c15c8aac83cd267135c9dbef0ed0ec1a8b338e66a3cf327bc18e"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 1,
+          "result": "FAIL",
+          "trace_hash": "fe87b57561e4cfd5ad4c67a19f3d5c17938cf6e81ed732606260eea43489c60f"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "b38539833edd2728071d2e9c27607306c3cdc112dbab8e9eabe048b114bf0548"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "ec84239708ae4f95f057fc28f688659feb79dcb74b512d129f714c686ea2695c"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "0767455b606c3bd3176f94c5c5c49bdca41468f4425fa73ce963cb35c31613d7"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "74ac3a59aee8135d1a4603c921dad8bac1e2bc725eb89e5c3c5ae53a3d33ca7d"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 2,
+          "result": "FAIL",
+          "trace_hash": "98cc4f27e2953e3c991df9be125c7e4f61c8f0d6d0ccf39b2605946bd1e5b027"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "ca009ddaf0ad1c616e06d5d93d9039bfd43fe923686e38ecddcc8b6d023934f2"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "f0c8db9675de6cbcf7464918c9f304dd5877cb28beffe9a871ea945837c7873c"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "b8359c27b0ba6ff77336a06841687aea9300e29d23dc1b05cfedd5d3a7594b80"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 1,
+          "result": "FAIL",
+          "trace_hash": "bf28096cf5fef1ecbc5997f3cc4541dfad9ac85b128c14d7a25377ab329ffd66"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "a75571d2853efdc49ef3782a091a71658e83e54b629e996495bc6a65e0b81b26"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "719a297b87416af003d1e4b52eff3f72b6ec2e1b23da078a46c37497af65f894"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "5715d6c42c520c3ab2cf87d939446900727d587e577ba986a7cc5c564d69a471"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "2e23e300666ab831f7ef4b58429afd5174a03af8b024a269d92ac55f76473d9e"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 2,
+          "result": "FAIL",
+          "trace_hash": "040d62ee7b2da0de65cc429d61c3e61d86a7ecabecbfe7c1eb68e48eaeca91e7"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "da346b802e00104efec0d4ec0d3c6149e040cd0302529a44f72948ef0f6e487c"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "84f9dc34619c599471c96cde03253f435e029a828ee881cb3c0b13059cef1d10"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "df65adc81aa503963ce4e9fb0e466e249f301d682e918d09f92167c0979149d2"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 1,
+          "result": "FAIL",
+          "trace_hash": "b44654687705d6ef744529aaecfce8d3886b0ef42f7dfd43c0f9113c164bc3ad"
+        }
+      ]
+    },
+    "scores": {
+      "semantic": {
+        "true_positives": 6,
+        "false_positives": 9,
+        "false_negatives": 0,
+        "precision": 0.4,
+        "recall": 1.0,
+        "f1": 0.5714285714285715,
+        "non_obvious_true_positives": 3,
+        "non_obvious_recall": 1.0,
+        "hallucinated_symbol_count": 0
+      },
+      "resolution": {
+        "unique_mapping_coverage": 0.5,
+        "unique_family_count": 3,
+        "ambiguous_family_count": 3,
+        "unmapped_family_count": 0
+      },
+      "defects": {
+        "seeded_defects_detected": 6,
+        "seeded_defect_recall": 0.5,
+        "mutants_killed": 6,
+        "mutation_kill_rate": 0.5,
+        "evidence_trace_completeness": 1.0
+      },
+      "false_critical_findings": 0,
+      "correct_normal_capture_passes": 3,
+      "correct_integration_pass_rate": 0.5,
+      "defect_records": [
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "ticketing",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": false,
+          "any_invariant_failed": false,
+          "correct_control_passed": false,
+          "trace_complete": false,
+          "is_finding": false
+        },
+        {
+          "family_id": "ticketing",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": false,
+          "any_invariant_failed": false,
+          "correct_control_passed": false,
+          "trace_complete": false,
+          "is_finding": false
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": false,
+          "any_invariant_failed": false,
+          "correct_control_passed": false,
+          "trace_complete": false,
+          "is_finding": false
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": false,
+          "any_invariant_failed": false,
+          "correct_control_passed": false,
+          "trace_complete": false,
+          "is_finding": false
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": false,
+          "any_invariant_failed": false,
+          "correct_control_passed": false,
+          "trace_complete": false,
+          "is_finding": false
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": false,
+          "any_invariant_failed": false,
+          "correct_control_passed": false,
+          "trace_complete": false,
+          "is_finding": false
+        }
+      ]
+    }
+  },
+  "ai": {
+    "execution": {
+      "mappings": {
+        "ecommerce": {
+          "schema_version": "1.0",
+          "application_id": "ecommerce",
+          "mapper_kind": "GEMINI",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.ship_order",
+              "confidence": 1.0,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "ship_order creates a shipment record to queue dispatch for the order, fulfilling the customer's purchase by shipping the product."
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "attempt_count": 1,
+            "transport_retry_count": 0,
+            "retry_reasons": [],
+            "request_digests": [
+              "ef44aa236895cf2da6bfae4bf875d637efac957103b337053e23f4e71139a6c9"
+            ]
+          }
+        },
+        "saas": {
+          "schema_version": "1.0",
+          "application_id": "saas",
+          "mapper_kind": "GEMINI",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.grant_subscription_access",
+              "confidence": 1.0,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "Grants access to the customer subscription by enabling access_state in state.subscriptions."
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "attempt_count": 1,
+            "transport_retry_count": 0,
+            "retry_reasons": [],
+            "request_digests": [
+              "b214fa863a55bef862bb5c941a22cf35b156af3d275353965990406063c4419d"
+            ]
+          }
+        },
+        "course": {
+          "schema_version": "1.0",
+          "application_id": "course",
+          "mapper_kind": "GEMINI",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.unlock_course",
+              "confidence": 1.0,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "unlock_course grants access to the purchased course by setting access_state to open in course_access."
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "attempt_count": 1,
+            "transport_retry_count": 0,
+            "retry_reasons": [],
+            "request_digests": [
+              "2eccc5020220019f6ebadfed19b8b5a191e7dddbe900a36dc0d7d30f61e0b771"
+            ]
+          }
+        },
+        "ticketing": {
+          "schema_version": "1.0",
+          "application_id": "ticketing",
+          "mapper_kind": "GEMINI",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.mint_admission_pass",
+              "confidence": 0.95,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 10,
+                  "line_end": 13,
+                  "explanation": "mints and activates an admission pass with scan state ready for the customer upon payment capture"
+                }
+              ]
+            },
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.bind_attendee_roster_row",
+              "confidence": 0.85,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "allocates a listed attendee position on the event roster for the customer"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "attempt_count": 1,
+            "transport_retry_count": 0,
+            "retry_reasons": [],
+            "request_digests": [
+              "b34a173dcc3ea570bd006e673b1b8033a54e16a7f4bfe7fcc50cf09c2a91572e"
+            ]
+          }
+        },
+        "workspace": {
+          "schema_version": "1.0",
+          "application_id": "workspace",
+          "mapper_kind": "GEMINI",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "confidence": 0.95,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 22,
+                  "line_end": 25,
+                  "explanation": "materialize_workspace_entitlement provisions and sets the workspace entitlement to ready for the customer upon successful payment capture."
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "attempt_count": 1,
+            "transport_retry_count": 0,
+            "retry_reasons": [],
+            "request_digests": [
+              "440d861776d6a457a1a74ec0bff2e3a8adbed460f801c2990d45a27e65cc88e2"
+            ]
+          }
+        },
+        "licensing": {
+          "schema_version": "1.0",
+          "application_id": "licensing",
+          "mapper_kind": "GEMINI",
+          "candidates": [
+            {
+              "role": "IRREVERSIBLE_FULFILMENT",
+              "symbol": "app.domain.allocate_license_seat",
+              "confidence": 0.95,
+              "evidence": [
+                {
+                  "kind": "BODY",
+                  "source_path": "app/domain.py",
+                  "line_start": 4,
+                  "line_end": 7,
+                  "explanation": "Assigns and allocates a product license seat to the customer upon payment capture, fulfilling the order."
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "attempt_count": 1,
+            "transport_retry_count": 0,
+            "retry_reasons": [],
+            "request_digests": [
+              "8599c4a1d0d22c5e97dd26e13a30b18625ad3abce9f6a3ddf50ceda6f3bcc7bf"
+            ]
+          }
+        }
+      },
+      "resolutions": {
+        "ecommerce": {
+          "mapper_kind": "GEMINI",
+          "family_id": "ecommerce",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "source_bundle_hash": "8e387bc81f2c9d89ea8b7a2deb571a702f3a8663608941e69575bc332c02596e",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 1,
+          "valid_symbols": [
+            "app.domain.ship_order"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "UNIQUE",
+          "selected_symbol": "app.domain.ship_order",
+          "explanation": "Exactly one valid role symbol was selected for deterministic instrumentation."
+        },
+        "saas": {
+          "mapper_kind": "GEMINI",
+          "family_id": "saas",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "source_bundle_hash": "35f8a5cd1f21dab02afcc58e366296d07d097656d7caf55847fc72d6a24365bd",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 1,
+          "valid_symbols": [
+            "app.domain.grant_subscription_access"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "UNIQUE",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "explanation": "Exactly one valid role symbol was selected for deterministic instrumentation."
+        },
+        "course": {
+          "mapper_kind": "GEMINI",
+          "family_id": "course",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "source_bundle_hash": "d1a515b5bf630f9465bcf80f849bcdb413f1567cc341ce615e9f82d7ce7c4537",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 1,
+          "valid_symbols": [
+            "app.domain.unlock_course"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "UNIQUE",
+          "selected_symbol": "app.domain.unlock_course",
+          "explanation": "Exactly one valid role symbol was selected for deterministic instrumentation."
+        },
+        "ticketing": {
+          "mapper_kind": "GEMINI",
+          "family_id": "ticketing",
+          "mapping_hash": "ed6322231ff034b6e60bcc32ebece52152cddd0aab7ac1a347e8d65168340960",
+          "source_bundle_hash": "d274da1b5a215ef85efe3b7a074b8ab499c3477167c93a3fc9f95e1f1fdf9763",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 2,
+          "valid_symbols": [
+            "app.domain.bind_attendee_roster_row",
+            "app.domain.mint_admission_pass"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "AMBIGUOUS",
+          "selected_symbol": null,
+          "explanation": "2 valid role symbols were returned; no unique instrumentation target exists, so fulfilment-specific execution was skipped."
+        },
+        "workspace": {
+          "mapper_kind": "GEMINI",
+          "family_id": "workspace",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "source_bundle_hash": "42f329ff6d843360aebd4074581f30a80ef49198eb933e960423c5d5d08d0a03",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 1,
+          "valid_symbols": [
+            "app.domain.materialize_workspace_entitlement"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "UNIQUE",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "explanation": "Exactly one valid role symbol was selected for deterministic instrumentation."
+        },
+        "licensing": {
+          "mapper_kind": "GEMINI",
+          "family_id": "licensing",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "source_bundle_hash": "a146984b0ddba98e9611c529b9fa82e272e5014b289aa4110503c6c13a049466",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "raw_candidate_count": 1,
+          "valid_symbols": [
+            "app.domain.allocate_license_seat"
+          ],
+          "hallucinated_symbols": [],
+          "resolution": "UNIQUE",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "explanation": "Exactly one valid role symbol was selected for deterministic instrumentation."
+        }
+      },
+      "observations": [
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "7cb9a3fbda1ef0019f526700a1ffd9b796ff49ed934e9cadd4ce859555699361",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "7cb9a3fbda1ef0019f526700a1ffd9b796ff49ed934e9cadd4ce859555699361",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "7cb9a3fbda1ef0019f526700a1ffd9b796ff49ed934e9cadd4ce859555699361",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "81097af4273b92ac6f8e57a1ef0b7af1f4ec90924fac570fe114e210a1ebea1b",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "81097af4273b92ac6f8e57a1ef0b7af1f4ec90924fac570fe114e210a1ebea1b",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            },
+            {
+              "sequence": 2,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 2
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "81097af4273b92ac6f8e57a1ef0b7af1f4ec90924fac570fe114e210a1ebea1b",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "64edad785acd4fe195201a22de8e07ed4597d6cd9aa5aad9bd260334b12bed60",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "64edad785acd4fe195201a22de8e07ed4597d6cd9aa5aad9bd260334b12bed60",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "66966dafc041fef8d6f42a0d4f5a368332a0b303798e2652ce85730ffea9d02b",
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.ship_order",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "64edad785acd4fe195201a22de8e07ed4597d6cd9aa5aad9bd260334b12bed60",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.ship_order",
+              "event_id": "evt_authorized_001",
+              "payment_id": "pay_benchmark_003"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "f38f2270e6478296bcb0860587575f88de338bc8d9c47f190005e4e42b101621",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "f38f2270e6478296bcb0860587575f88de338bc8d9c47f190005e4e42b101621",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "f38f2270e6478296bcb0860587575f88de338bc8d9c47f190005e4e42b101621",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "efd1d9f5f6a85fff733b7aadf02358a665422efac3f5685fd43956dd5d5188c6",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "efd1d9f5f6a85fff733b7aadf02358a665422efac3f5685fd43956dd5d5188c6",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            },
+            {
+              "sequence": 2,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 2
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "efd1d9f5f6a85fff733b7aadf02358a665422efac3f5685fd43956dd5d5188c6",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "6af78a2ae82556ea7696ee8be20a5be445b2ef9e24b1d32a3a8bf46010178360",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "6af78a2ae82556ea7696ee8be20a5be445b2ef9e24b1d32a3a8bf46010178360",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "83d45880d807031dc75ccb3982389430c4d9d20a6f2fa770f561c420a1b5f96e",
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.grant_subscription_access",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "6af78a2ae82556ea7696ee8be20a5be445b2ef9e24b1d32a3a8bf46010178360",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.grant_subscription_access",
+              "event_id": "evt_authorized_001",
+              "payment_id": "pay_benchmark_003"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "4c8f5a7a31313abcb3fe64b1374af445a67e9c66e5e44faae4a3ec27104bc7da",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "4c8f5a7a31313abcb3fe64b1374af445a67e9c66e5e44faae4a3ec27104bc7da",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "4c8f5a7a31313abcb3fe64b1374af445a67e9c66e5e44faae4a3ec27104bc7da",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "9c06fcf3d15f217cfd45deecf3b5e016a8d988e8f10289d0cf46bbaab6497317",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "9c06fcf3d15f217cfd45deecf3b5e016a8d988e8f10289d0cf46bbaab6497317",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            },
+            {
+              "sequence": 2,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 2
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "9c06fcf3d15f217cfd45deecf3b5e016a8d988e8f10289d0cf46bbaab6497317",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "52cc770133c98d460d34ab9ef37be00470779528cd34f8b5778a3a204430ffab",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "52cc770133c98d460d34ab9ef37be00470779528cd34f8b5778a3a204430ffab",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "79f088ed794f2165aa735db82689b8ec2c4192acdd4fadba10d008b88e4ddd3b",
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.unlock_course",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "52cc770133c98d460d34ab9ef37be00470779528cd34f8b5778a3a204430ffab",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.unlock_course",
+              "event_id": "evt_authorized_001",
+              "payment_id": "pay_benchmark_003"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "adeb53f675d98d75338e8ca431c62b0294cb5220ebfa2fe521978634e34b5cc1",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "adeb53f675d98d75338e8ca431c62b0294cb5220ebfa2fe521978634e34b5cc1",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "adeb53f675d98d75338e8ca431c62b0294cb5220ebfa2fe521978634e34b5cc1",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "591b4904c4358007a7bd214e2c5ceac5ce28ab782406884396eeccf88f2fc968",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "591b4904c4358007a7bd214e2c5ceac5ce28ab782406884396eeccf88f2fc968",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            },
+            {
+              "sequence": 2,
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 2
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "591b4904c4358007a7bd214e2c5ceac5ce28ab782406884396eeccf88f2fc968",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "b24126b62357114039f1684bb9ec3a0b0db07a60572e64d02c8565a21908db20",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "b24126b62357114039f1684bb9ec3a0b0db07a60572e64d02c8565a21908db20",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "a6c0ebc43748beecd445188d25e76cb26100eb6f9ea51977439915af2ff13f72",
+          "family_id": "workspace",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.materialize_workspace_entitlement",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "b24126b62357114039f1684bb9ec3a0b0db07a60572e64d02c8565a21908db20",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.materialize_workspace_entitlement",
+              "event_id": "evt_authorized_001",
+              "payment_id": "pay_benchmark_003"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "9a71a901cffc5a2d98121868b1fa047d3f9bda13c4350b1af39433e88c737729",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.allocate_license_seat",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "9a71a901cffc5a2d98121868b1fa047d3f9bda13c4350b1af39433e88c737729",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.allocate_license_seat",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_01",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "9a71a901cffc5a2d98121868b1fa047d3f9bda13c4350b1af39433e88c737729",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "c727f78123600467e4f2b0e45c45e7d2c4f4d77c0b545a9a50011cccf4dcea94",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.allocate_license_seat",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "c727f78123600467e4f2b0e45c45e7d2c4f4d77c0b545a9a50011cccf4dcea94",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.allocate_license_seat",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            },
+            {
+              "sequence": 2,
+              "symbol": "app.domain.allocate_license_seat",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 2
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_02",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "c727f78123600467e4f2b0e45c45e7d2c4f4d77c0b545a9a50011cccf4dcea94",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [],
+          "observed_count": 0
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S1",
+          "scenario_hash": "c97d2dda1b95027eaa0757c9263c0d08fb24fb7001805ad0c8e4d4934eb6822a",
+          "fixture_source_hash": "b030b4efd0be5b2eeaccfe18937ed918f795bfa24c7567042ad86075cb16a8e1",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.allocate_license_seat",
+              "event_id": "evt_capture_001",
+              "payment_id": "pay_benchmark_001"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S2",
+          "scenario_hash": "871c43810ba1ec0a0b246ed1bd9f3d70a9decf05dc2f80b0b14e9fa4f33234b8",
+          "fixture_source_hash": "b030b4efd0be5b2eeaccfe18937ed918f795bfa24c7567042ad86075cb16a8e1",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            },
+            {
+              "id": "evt_capture_dup_001",
+              "type": "payment.captured"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.allocate_license_seat",
+              "event_id": "evt_capture_dup_001",
+              "payment_id": "pay_benchmark_002"
+            }
+          ],
+          "observed_count": 1
+        },
+        {
+          "mapper_kind": "GEMINI",
+          "mapping_hash": "7110c589fa94aef42ab899c92e73bda03bbfa466c08e3feca60a5992e8f5aa40",
+          "family_id": "licensing",
+          "fixture_id": "fixture_03",
+          "selected_symbol": "app.domain.allocate_license_seat",
+          "scenario_id": "S3",
+          "scenario_hash": "94ec165e19df94cbe93ca9c67a10a84b3dab020dea2b969f5dbda6a263466963",
+          "fixture_source_hash": "b030b4efd0be5b2eeaccfe18937ed918f795bfa24c7567042ad86075cb16a8e1",
+          "contract_hash": "3454f599945434d7dfbe3cf0eb42ad504bb007f63305453095ce38d07c73e62a",
+          "input_events": [
+            {
+              "id": "evt_authorized_001",
+              "type": "payment.authorized"
+            }
+          ],
+          "calls": [
+            {
+              "sequence": 1,
+              "symbol": "app.domain.allocate_license_seat",
+              "event_id": "evt_authorized_001",
+              "payment_id": "pay_benchmark_003"
+            }
+          ],
+          "observed_count": 1
+        }
+      ],
+      "invariant_results": [
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "bad704c21e50fedf78ecb0b5f132196ca41caddd729b1d9a790366fa77e1103e"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "58fe9c85fa2c07f2e7b3a644b26a938dbe2dd96cf5f53d5d1744f75138e23598"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "46d4ac04cd6e023c15e15e2a48b6b705d68731cb4f0db40ff1b78b0bb0f2f2e2"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "05c7dfb7312dcb02049fbd099b98b11dab7113cfe4e9aa105d9ce254ae0ecab2"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 2,
+          "result": "FAIL",
+          "trace_hash": "8b42bdf187492d56e30f19ac184bae628d080f73eb006e7512fca597aaa97da2"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "baf5e0d4dd82a7ab6c6f625b08c87ffdd8accc4279bcccecc0185f97c4bfe9ab"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "8928dfc6301c8e3e83b42758597bdc2827b52cb9c3bd730e2e7112bb9ef6b973"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "b2d8b9d204d47dafc8e806781fb67bbf468e3e48e95691a85fea4f3c7113f5d6"
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 1,
+          "result": "FAIL",
+          "trace_hash": "9aa825a4b9a8929165f55c3195895516655354ba4af0ea2ad873f6e5f3b46716"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "8907e5c58def68e3fcbcea2c775b7eb7181868d52d925aa0c0c2c52ce2f8bfbd"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "3685cb7568d9dce33f483dc7687bbcdb3fa5c953271d0b60cef59462d5608962"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "c816c406175729ea028b4439e662e25b21e1ef687b9b708b4cc14b6163d82543"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "23260a5aecf04e97b3028ce860e941e073524f12e05073d499e40f8458804669"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 2,
+          "result": "FAIL",
+          "trace_hash": "f0c80a6c2300c9511baa56e6d0a69367b801dc3cd58e2bbcd197df2a9ab690ce"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "e0bee5e67e1d7edcb1620a57f8f6f92578936448e57e879a6a530243c733d74e"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "5de2d7b7fafa1fc388bc81ed2bac5e63276ae1228de39c61ce9ca2139e7c074e"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "c913c4ec09045761ad9f606345e78ea8fc8d8e21e6cee0475c5a37c7d6088f26"
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 1,
+          "result": "FAIL",
+          "trace_hash": "dd8b6056921f9267d6fdb9bf22200f23634eda19d90282d9b13a4d90775aeda9"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "b77b4dfad287dfdf12dd747be8614fc564ef97b5392d93af5bbe984229fa6234"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "6c24a1f4babce2f2609f725e9f91765c5d762bc8596d6fac1e5bc4431fc14d49"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "10c6a4b095a97bfadeaf4f92edca1d1efb14e281f5b704b11e498b7c851c5630"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "f1fa302ce99b2d6909a2b59fa30d0c15207a17204e110b0d651411c5a90fc69c"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 2,
+          "result": "FAIL",
+          "trace_hash": "df0f834d3aef940e2bb93579ad5fb6c23c3589d89fe13933bee74c0693e1f135"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "9c0937994adb72362d0964880c7dd4debca4cced41e344758c190a99ed6dab73"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "c3b34026c4d575fa31ffcdf5e28a18cee67bfb315cb11b0c8cc3a592145ddc65"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "e8304c013fb8d0994789eae9302a7979e093b9133f7269649bb4cfc60f9b0d1b"
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 1,
+          "result": "FAIL",
+          "trace_hash": "33ffaf2f3cb96e09a3113c70fcfc19c8c80bbf2782bcc24dbd702f978654cab8"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "a167d8741eff61203e2786f0388dd75aef9fe45462d1bf9cf127c825958eaeec"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "ea1822f712154d8f4365f62352a223533c5ce75e0c405a6b47e2b7e9291dd9f0"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "cbfe7a0169eaf61da2fef0192b60373129d846ca03658584ddace5a36f209c03"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "aecfc9a606c5f6fd9535a8415053de6ddb8c2d3cf1c5730a0a6903acdc977f7e"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 2,
+          "result": "FAIL",
+          "trace_hash": "438636007b1b382fb85db6d9614a32f64a961f92fdab4537e34928527ef2104c"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "768d97ea91ccb59cfce9229d69a00e7e02b69c0af049c0643f64e03ae7ff17e9"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "a4f08aba647d7cbac8d3cb1bfba344aa8f3d2ebc168797bd811fc3ac5772e4a9"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "d3c9d0c523d5ffc6a921ba9511cbc847f4ab4e111c5f642160c100cd2737de9f"
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 1,
+          "result": "FAIL",
+          "trace_hash": "8c3792a55ce2c2c294d0909491d41cb34b776214b9db89e3c10b99616de0710b"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "1f81b72f624785a6216f660544a7c5aa38fb2427d47a3d25ffb9a99d0510dc39"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "29c8993c69e60f256b087199e323c3a1a3250d67d33e1537e4a32cfbcaf6e8d7"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_01",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "e10842129e1d2db03d5b1fc0af40ff886df7846e49d50bbefa2079dd267e2b69"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "a72bbcb612ebc2a1c2caa38129e78410c49622a7eb3c811a3290179d78142ae9"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 2,
+          "result": "FAIL",
+          "trace_hash": "df53798b253a35430de3aab9a902253269fcd7e79fab4081918d387116a3c44a"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_02",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 0,
+          "result": "PASS",
+          "trace_hash": "969aed12ba6f523e4efc231d10968f298fdfc5e0c1dc115bc0dd64e233ea001d"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-01",
+          "scenario_id": "S1",
+          "comparator": "==",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "3390409e3496a4619057fe8ddd5d779d67b0d15f619e95bb07b4168a9d87cf28"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-02",
+          "scenario_id": "S2",
+          "comparator": "<=",
+          "expected": 1,
+          "observed": 1,
+          "result": "PASS",
+          "trace_hash": "a1b3f702030b55c42863a2cd430a851cf10ad6c048ea2f845d4a15e9a9f945c2"
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_03",
+          "invariant_id": "SG-03",
+          "scenario_id": "S3",
+          "comparator": "==",
+          "expected": 0,
+          "observed": 1,
+          "result": "FAIL",
+          "trace_hash": "f43ded5060d5335fda69b53563e86ce82f6fba6d57eb5b3f362c03a73c53262b"
+        }
+      ]
+    },
+    "scores": {
+      "semantic": {
+        "true_positives": 6,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1": 0.923076923076923,
+        "non_obvious_true_positives": 3,
+        "non_obvious_recall": 1.0,
+        "hallucinated_symbol_count": 0
+      },
+      "resolution": {
+        "unique_mapping_coverage": 0.8333333333333334,
+        "unique_family_count": 5,
+        "ambiguous_family_count": 1,
+        "unmapped_family_count": 0
+      },
+      "defects": {
+        "seeded_defects_detected": 10,
+        "seeded_defect_recall": 0.8333333333333334,
+        "mutants_killed": 10,
+        "mutation_kill_rate": 0.8333333333333334,
+        "evidence_trace_completeness": 1.0
+      },
+      "false_critical_findings": 0,
+      "correct_normal_capture_passes": 5,
+      "correct_integration_pass_rate": 0.8333333333333334,
+      "defect_records": [
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "ecommerce",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "saas",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "course",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "ticketing",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": false,
+          "any_invariant_failed": false,
+          "correct_control_passed": false,
+          "trace_complete": false,
+          "is_finding": false
+        },
+        {
+          "family_id": "ticketing",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": false,
+          "any_invariant_failed": false,
+          "correct_control_passed": false,
+          "trace_complete": false,
+          "is_finding": false
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "workspace",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_02",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        },
+        {
+          "family_id": "licensing",
+          "fixture_id": "fixture_03",
+          "target_invariant_failed": true,
+          "any_invariant_failed": true,
+          "correct_control_passed": true,
+          "trace_complete": true,
+          "is_finding": true
+        }
+      ]
+    }
+  },
+  "pass_conditions": {
+    "AI_ROLE_RECALL_AT_LEAST_5_OF_6": true,
+    "AI_NON_OBVIOUS_RECALL_AT_LEAST_2_OF_3": true,
+    "AI_CRITICAL_ROLE_PRECISION_AT_LEAST_90_PERCENT": false,
+    "AI_HALLUCINATED_SYMBOL_COUNT_ZERO": true,
+    "AI_DEFECT_RECALL_AT_LEAST_10_OF_12": true,
+    "MATERIAL_AI_LIFT": true,
+    "FALSE_CRITICAL_FINDINGS_ZERO": true,
+    "ALL_CORRECT_NORMAL_CAPTURE_PASS": false,
+    "ALL_DEFECT_FINDINGS_HAVE_COMPLETE_TRACES": true,
+    "INVARIANT_ENGINE_HAS_EXCLUSIVE_PASS_FAIL_AUTHORITY": true
+  },
+  "overall": "NO_GO"
+}

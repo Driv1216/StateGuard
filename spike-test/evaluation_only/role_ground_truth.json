@@ -1,0 +1,39 @@
+{
+  "ecommerce": {
+    "role_symbol": "app.domain.ship_order",
+    "hard_structural_distractors": []
+  },
+  "saas": {
+    "role_symbol": "app.domain.grant_subscription_access",
+    "hard_structural_distractors": []
+  },
+  "course": {
+    "role_symbol": "app.domain.unlock_course",
+    "hard_structural_distractors": []
+  },
+  "ticketing": {
+    "role_symbol": "app.domain.mint_admission_pass",
+    "hard_structural_distractors": [
+      "app.domain.bind_attendee_roster_row",
+      "app.domain.stamp_venue_reconciliation_entry",
+      "app.domain.attach_event_tax_basis"
+    ]
+  },
+  "workspace": {
+    "role_symbol": "app.domain.materialize_workspace_entitlement",
+    "hard_structural_distractors": [
+      "app.domain.bind_region_affinity",
+      "app.domain.snapshot_tenant_quota_basis",
+      "app.domain.attach_workspace_cost_center"
+    ]
+  },
+  "licensing": {
+    "role_symbol": "app.domain.allocate_license_seat",
+    "hard_structural_distractors": [
+      "app.domain.bind_contract_term",
+      "app.domain.stamp_catalog_edition",
+      "app.domain.attach_reseller_attribution"
+    ]
+  }
+}
+

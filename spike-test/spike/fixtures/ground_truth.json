@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "dataset_seed": 20260821,
+  "counts": {
+    "clean": 15,
+    "normalized": 5,
+    "semantic": 5,
+    "ambiguous": 3,
+    "corrupted": 2
+  },
+  "messy_categories": [
+    "normalized",
+    "semantic"
+  ],
+  "cases": [
+    {
+      "case_id": "CASE-CLEAN-01",
+      "category": "clean",
+      "ledger_id": "LED-E996FCB2185A",
+      "settlement_id": "SET-E41B13C6BBDC",
+      "bank_id": "BNK-73E4FE78EA20",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-02",
+      "category": "clean",
+      "ledger_id": "LED-F6674C09D967",
+      "settlement_id": "SET-A99043A93EC0",
+      "bank_id": "BNK-B7D32F75E6B4",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-03",
+      "category": "clean",
+      "ledger_id": "LED-1B062D518208",
+      "settlement_id": "SET-7D1FC4FAA360",
+      "bank_id": "BNK-59E6FE4D718C",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-04",
+      "category": "clean",
+      "ledger_id": "LED-C563D5F9895A",
+      "settlement_id": "SET-977E536142E9",
+      "bank_id": "BNK-2513EA711CAD",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-05",
+      "category": "clean",
+      "ledger_id": "LED-2530C9082F1C",
+      "settlement_id": "SET-1A3862DB361A",
+      "bank_id": "BNK-B178B468BAD7",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-06",
+      "category": "clean",
+      "ledger_id": "LED-4302F84A52D1",
+      "settlement_id": "SET-CB38D4150E50",
+      "bank_id": "BNK-52CA06B7A2F7",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-07",
+      "category": "clean",
+      "ledger_id": "LED-4D9D3552E13F",
+      "settlement_id": "SET-8EDBE59042A7",
+      "bank_id": "BNK-0F8B1DD1F1DC",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-08",
+      "category": "clean",
+      "ledger_id": "LED-88CC69D5EEAE",
+      "settlement_id": "SET-FD2FA36081B8",
+      "bank_id": "BNK-E47BD913DE6B",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-09",
+      "category": "clean",
+      "ledger_id": "LED-6524A612F688",
+      "settlement_id": "SET-44AD7CF71543",
+      "bank_id": "BNK-05570D5CACCA",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-10",
+      "category": "clean",
+      "ledger_id": "LED-07308501955F",
+      "settlement_id": "SET-BBDCB67E1516",
+      "bank_id": "BNK-DC11E248D650",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-11",
+      "category": "clean",
+      "ledger_id": "LED-E83AA4987D4C",
+      "settlement_id": "SET-1F629B01A7BD",
+      "bank_id": "BNK-4740E62ED24E",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-12",
+      "category": "clean",
+      "ledger_id": "LED-5863B1C56BFE",
+      "settlement_id": "SET-34AA3EDA3B68",
+      "bank_id": "BNK-A4F8C457E2C9",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-13",
+      "category": "clean",
+      "ledger_id": "LED-76B73DF7FDBF",
+      "settlement_id": "SET-818C971A4160",
+      "bank_id": "BNK-E7EE6F0F9A47",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-14",
+      "category": "clean",
+      "ledger_id": "LED-3DDB32E8905B",
+      "settlement_id": "SET-73414A06F90E",
+      "bank_id": "BNK-C554C31F95FB",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-CLEAN-15",
+      "category": "clean",
+      "ledger_id": "LED-947795848148",
+      "settlement_id": "SET-D7945618A39E",
+      "bank_id": "BNK-493DC060A112",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-NORMALIZED-01",
+      "category": "normalized",
+      "ledger_id": "LED-3DDF4F5A01A6",
+      "settlement_id": "SET-620775F078C7",
+      "bank_id": "BNK-1AB852E46C33",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-NORMALIZED-02",
+      "category": "normalized",
+      "ledger_id": "LED-2EC2291255B7",
+      "settlement_id": "SET-DF88F7366A68",
+      "bank_id": "BNK-30E1025C98E7",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-NORMALIZED-03",
+      "category": "normalized",
+      "ledger_id": "LED-31E3619B518B",
+      "settlement_id": "SET-AF2E19FB98F4",
+      "bank_id": "BNK-8D1F8027CF9C",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-NORMALIZED-04",
+      "category": "normalized",
+      "ledger_id": "LED-2377AC488CA0",
+      "settlement_id": "SET-2E1F2486C1CE",
+      "bank_id": "BNK-21A202E18292",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-NORMALIZED-05",
+      "category": "normalized",
+      "ledger_id": "LED-1C3DEC1C08A6",
+      "settlement_id": "SET-2AA2FDD26C7A",
+      "bank_id": "BNK-0F19618A1FB6",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-SEMANTIC-01",
+      "category": "semantic",
+      "ledger_id": "LED-7488D8608911",
+      "settlement_id": "SET-B18E061AA095",
+      "bank_id": "BNK-6D6F867890B9",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-SEMANTIC-02",
+      "category": "semantic",
+      "ledger_id": "LED-8F42C7B6F9B1",
+      "settlement_id": "SET-5582C2C180D3",
+      "bank_id": "BNK-E2C565DEBA8D",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-SEMANTIC-03",
+      "category": "semantic",
+      "ledger_id": "LED-2E1C9BE8F3DC",
+      "settlement_id": "SET-54EB5964F6BA",
+      "bank_id": "BNK-25685D3CEF0E",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-SEMANTIC-04",
+      "category": "semantic",
+      "ledger_id": "LED-7084A9348B63",
+      "settlement_id": "SET-C64E48E1C003",
+      "bank_id": "BNK-24175E7F90CD",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-SEMANTIC-05",
+      "category": "semantic",
+      "ledger_id": "LED-E3FB3CF3EAF6",
+      "settlement_id": "SET-A05FB9E2B02B",
+      "bank_id": "BNK-9DA912459949",
+      "expected_status": "VERIFIED"
+    },
+    {
+      "case_id": "CASE-AMBIGUOUS-01",
+      "category": "ambiguous",
+      "ledger_id": "LED-D6A1D9FE6BF5",
+      "settlement_id": "SET-52FE21A9BAC3",
+      "bank_id": "BNK-7CA4EAA0BBCD",
+      "expected_status": "REVIEW"
+    },
+    {
+      "case_id": "CASE-AMBIGUOUS-02",
+      "category": "ambiguous",
+      "ledger_id": "LED-6A1B4131CCA4",
+      "settlement_id": "SET-501C1D7AC6FC",
+      "bank_id": "BNK-1A8150A57920",
+      "expected_status": "REVIEW"
+    },
+    {
+      "case_id": "CASE-AMBIGUOUS-03",
+      "category": "ambiguous",
+      "ledger_id": "LED-45C87B8F2E70",
+      "settlement_id": "SET-15963808D1A0",
+      "bank_id": "BNK-B41AF33F567C",
+      "expected_status": "REVIEW"
+    },
+    {
+      "case_id": "CASE-CORRUPTED-01",
+      "category": "corrupted",
+      "ledger_id": "LED-6AC4A402833D",
+      "settlement_id": "SET-2A559327E6EE",
+      "bank_id": "BNK-26E4BB2F6F5D",
+      "expected_status": "EXCEPTION"
+    },
+    {
+      "case_id": "CASE-CORRUPTED-02",
+      "category": "corrupted",
+      "ledger_id": "LED-1E7B0E8AFB79",
+      "settlement_id": "SET-4C2464E0FB6C",
+      "bank_id": "BNK-10D600AFCE26",
+      "expected_status": "EXCEPTION"
+    }
+  ]
+}

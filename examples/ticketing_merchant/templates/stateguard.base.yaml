@@ -1,0 +1,26 @@
+schema_version: 2
+project:
+  id: sgproj_12121212121212121212121212121212
+  source_root: .
+  framework: fastapi
+  app_target: app.main:app
+analysis:
+  include: ["app/**/*.py"]
+  exclude: [".stateguard/**", ".demo/**", "templates/**"]
+ai:
+  provider: gemini
+  model: gemini-3.7-flash
+  api_key_env: GEMINI_API_KEY
+runtime:
+  mode: managed
+  working_directory: .
+  startup_timeout_seconds: 20
+  request_timeout_seconds: 10
+  shutdown_timeout_seconds: 5
+  env_from_host:
+    STATEGUARD_TEST_WEBHOOK_SECRET: SG_DEMO_WEBHOOK_SECRET
+    MERCHANT_WEBHOOK_SECRET: SG_DEMO_WEBHOOK_SECRET
+    STATEGUARD_TEST_RAZORPAY_KEY_SECRET: SG_DEMO_CHECKOUT_SECRET
+    MERCHANT_CHECKOUT_SECRET: SG_DEMO_CHECKOUT_SECRET
+    STATEGUARD_TEST_SERVER_ORDER_ID: SG_DEMO_SERVER_ORDER_ID
+    MERCHANT_SERVER_ORDER_ID: SG_DEMO_SERVER_ORDER_ID

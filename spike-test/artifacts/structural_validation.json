@@ -1,0 +1,201 @@
+{
+  "families": {
+    "ecommerce": {
+      "source_matches_fixture_01": true,
+      "predicate_oracles_absent": true,
+      "source_bundle_hash": "8e387bc81f2c9d89ea8b7a2deb571a702f3a8663608941e69575bc332c02596e"
+    },
+    "saas": {
+      "source_matches_fixture_01": true,
+      "predicate_oracles_absent": true,
+      "source_bundle_hash": "35f8a5cd1f21dab02afcc58e366296d07d097656d7caf55847fc72d6a24365bd"
+    },
+    "course": {
+      "source_matches_fixture_01": true,
+      "predicate_oracles_absent": true,
+      "source_bundle_hash": "d1a515b5bf630f9465bcf80f849bcdb413f1567cc341ce615e9f82d7ce7c4537"
+    },
+    "ticketing": {
+      "source_matches_fixture_01": true,
+      "predicate_oracles_absent": true,
+      "source_bundle_hash": "d274da1b5a215ef85efe3b7a074b8ab499c3477167c93a3fc9f95e1f1fdf9763",
+      "hard_distractor_count": 3,
+      "feature_vectors": {
+        "app.domain.mint_admission_pass": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.bind_attendee_roster_row": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.stamp_venue_reconciliation_entry": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.attach_event_tax_basis": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        }
+      },
+      "structural_parity": true,
+      "baseline_resolution": "AMBIGUOUS",
+      "baseline_is_ambiguous": true
+    },
+    "workspace": {
+      "source_matches_fixture_01": true,
+      "predicate_oracles_absent": true,
+      "source_bundle_hash": "42f329ff6d843360aebd4074581f30a80ef49198eb933e960423c5d5d08d0a03",
+      "hard_distractor_count": 3,
+      "feature_vectors": {
+        "app.domain.materialize_workspace_entitlement": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.bind_region_affinity": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.snapshot_tenant_quota_basis": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.attach_workspace_cost_center": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        }
+      },
+      "structural_parity": true,
+      "baseline_resolution": "AMBIGUOUS",
+      "baseline_is_ambiguous": true
+    },
+    "licensing": {
+      "source_matches_fixture_01": true,
+      "predicate_oracles_absent": true,
+      "source_bundle_hash": "a146984b0ddba98e9611c529b9fa82e272e5014b289aa4110503c6c13a049466",
+      "hard_distractor_count": 3,
+      "feature_vectors": {
+        "app.domain.allocate_license_seat": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.bind_contract_term": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.stamp_catalog_edition": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        },
+        "app.domain.attach_reseller_attribution": {
+          "score": 10,
+          "structural_features": [
+            "direct_captured",
+            "leaf_like",
+            "stateful_effect",
+            "webhook_reachable"
+          ],
+          "positive_identifier_hits": [],
+          "exclusion_identifier_hits": [],
+          "has_docstring": false
+        }
+      },
+      "structural_parity": true,
+      "baseline_resolution": "AMBIGUOUS",
+      "baseline_is_ambiguous": true
+    }
+  },
+  "calibration_isolation": {
+    "symbol_names_disjoint": true,
+    "normalized_function_bodies_disjoint": true,
+    "topology_signatures_disjoint": true
+  }
+}

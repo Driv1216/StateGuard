@@ -1,0 +1,1 @@
+"""StateGuard command-line adapter."""
