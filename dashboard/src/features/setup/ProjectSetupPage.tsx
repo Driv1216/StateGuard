@@ -1,7 +1,7 @@
 import { type FormEvent, useEffect, useState } from "react";
 
 import { useDashboardActions, useDashboardState, useServerActionDisabled } from "../../app/state";
-import type { RuntimeConfigRequest } from "../../api/contracts";
+import type { RuntimeConfigRequest, SemanticOperation, SemanticSelectionOption } from "../../api/contracts";
 import { Button, DefinitionList, Field, Fingerprint, PageHeader, Panel, StateMessage, StatusBadge, formatDate, formatLocation } from "../../components/ui";
 
 export function ProjectSetupPage() {
@@ -113,6 +113,21 @@ function RuntimeForm() {
   </Panel>;
 }
 
+export function getSemanticWorkflowMessage(operation: SemanticOperation): string {
+  const artifact = operation.artifact;
+  if (artifact.provider_failure) {
+    return "Provider resolution failed safely. Current bounded manual options remain available.";
+  }
+  const isPartialBundle =
+    artifact.context?.bundle_completeness === "BUNDLE_PARTIAL" ||
+    (Array.isArray(artifact.partial_bundle_suggestions) && artifact.partial_bundle_suggestions.length > 0) ||
+    operation.selection_options.some((opt) => opt.kind === "PARTIAL_SUGGESTION");
+  if (isPartialBundle) {
+    return "AI resolution completed, but source coverage is partial. Provider suggestions require human confirmation.";
+  }
+  return "Provider-backed candidates are suggestions, not verification authority.";
+}
+
 function SemanticSetup() {
   const state = useDashboardState();
   const actions = useDashboardActions();
@@ -123,7 +138,7 @@ function SemanticSetup() {
     <div className="semantic-columns">
       <section><h3>Configured / recorded</h3>{state.semantics?.recorded ? <><div className="button-row"><StatusBadge value={state.semantics.state ?? "UNMAPPED"} /><span className="currentness">Source currentness not checked</span></div><DefinitionList items={[["Recorded", formatDate(state.semantics.recorded_at)], ["Basis", state.semantics.basis], ["Selected symbol ID", <Fingerprint value={state.semantics.selected_symbol_id} />], ["Context fingerprint", <Fingerprint value={state.semantics.semantic_context_fingerprint} />], ["Provider failure", state.semantics.provider_failure_code ?? "None recorded"]]} />{state.semantics.candidates.length ? <ul className="candidate-list recorded">{state.semantics.candidates.map((candidate) => <li key={`${candidate.kind}-${candidate.symbol_id}`}><strong>{candidate.kind.replaceAll("_", " ")}</strong><code>{candidate.symbol_id}</code><p>{candidate.rationale}</p>{candidate.provider_confidence !== null ? <small>Provider confidence {Math.round(candidate.provider_confidence * 100)}% · non-authoritative</small> : null}</li>)}</ul> : null}</> : <StateMessage title="No recorded semantic artifact">Nothing has been persisted yet.</StateMessage>}</section>
       <section><h3>Fresh current operation</h3>{!state.analysis ? <StateMessage title="Analyze required">Establish current project/source/graph authority before requesting enriched candidates.</StateMessage> : <><p className="fresh-authority"><strong>Current analysis available</strong><span><Fingerprint value={state.analysis.source_index_fingerprint} /></span></p><Button disabled={disabled} onClick={() => void actions.resolveSemantics()}>Resolve customer value</Button></>}
-        {state.semanticOperation ? <div className="candidate-workflow"><p>{state.semanticOperation.artifact.provider_failure ? "Provider resolution failed safely. Current bounded manual options remain available." : "Provider-backed candidates are suggestions, not verification authority."}</p>{options.length ? <><div className="candidate-list">{options.map((option) => <label key={option.symbol_id} className={selected === option.symbol_id ? "selected" : ""}><input type="radio" name="semantic-symbol" value={option.symbol_id} checked={selected === option.symbol_id} onChange={() => setSelected(option.symbol_id)} /><span><strong>{option.qualified_name}</strong><small>{option.symbol_kind} · {formatLocation(option.source_location)}</small><code>{option.symbol_id}</code>{option.rationale ? <p>{option.rationale}</p> : null}{option.provider_confidence !== null ? <em>Provider confidence {Math.round(option.provider_confidence * 100)}% · non-authoritative</em> : null}</span></label>)}</div><Button variant="primary" disabled={disabled || !selected} onClick={() => void actions.confirmSemantics(selected)}>Confirm selected symbol</Button></> : <StateMessage title="No eligible current candidates">The current source analysis returned no bounded selection options.</StateMessage>}</div> : null}
+        {state.semanticOperation ? <div className="candidate-workflow"><p>{getSemanticWorkflowMessage(state.semanticOperation)}</p>{options.length ? <><div className="candidate-list">{options.map((option) => <label key={option.symbol_id} className={selected === option.symbol_id ? "selected" : ""}><input type="radio" name="semantic-symbol" value={option.symbol_id} checked={selected === option.symbol_id} onChange={() => setSelected(option.symbol_id)} /><span><strong>{option.qualified_name}</strong><small>{option.symbol_kind} · {formatLocation(option.source_location)}</small><code>{option.symbol_id}</code>{option.rationale ? <p>{option.rationale}</p> : null}{option.provider_confidence !== null ? <em>Provider confidence {Math.round(option.provider_confidence * 100)}% · non-authoritative</em> : null}</span></label>)}</div><Button variant="primary" disabled={disabled || !selected} onClick={() => void actions.confirmSemantics(selected)}>Confirm selected symbol</Button></> : <StateMessage title="No eligible current candidates">The current source analysis returned no bounded selection options.</StateMessage>}</div> : null}
       </section>
     </div>
   </Panel>;

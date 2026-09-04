@@ -1,13 +1,14 @@
 # StateGuard — Current State
 
-**Last meaningful update:** 2026-08-31  
+**Last meaningful update:** 2026-09-02
+
 **Purpose of this file:** Current implementation reality and near-term execution state. Keep concise. Update after meaningful capability/architecture/verification changes — not after every small edit.
 
 ---
 
 ## 1. Current objective
 
-**Step 12 complete; bounded Razorpay Test Mode E4 grounding complete.**
+**Buildathon product complete; live walkthrough and genuine Razorpay Test Mode E4 proof complete.**
 
 Project Discovery, the Python/FastAPI Source Index, the Step 2 structural Payment Safety Graph,
 Step 3 provider-agnostic customer-value semantic resolution, Step 4 merchant policy/scenario
@@ -23,14 +24,58 @@ credentials and resource IDs remain ephemeral, Live/unknown keys fail closed bef
 and every unavailable-provider path retains ordinary E3 verification and unchanged CI truth. E4 is
 explicitly resource-profile grounding, not webhook-delivery, signature, retry, or duplicate evidence.
 
-The ticketing merchant demo (`examples/ticketing_merchant`) provides a first-class walkthrough of
-authentic dual-candidate semantic ambiguity, human confirmation, policy confirmation, deterministic
-failure (SG-02 duplicate delivery and SG-03 acknowledgement retry), bounded AI explanation and patch
-preview, exact re-verification (`VERIFIED FAIL → VERIFIED PASS` / `PROVEN_RESOLVED`), and CI exit
-semantics (`0` / `REQUIRED_CHECKS_PASSED`). Managed runtime verification was optimized to ~4.2 seconds
-per canonical run. Independent repetition testing confirmed 5/5 vulnerable and 5/5 corrected cycles
-with 100% deterministic repeatability and zero resource leaks. The packaged distribution was
-independently verified via clean-room wheel smoke testing.
+The ticketing merchant walkthrough has now exercised the real production path end to end. A one-attempt
+Gemini `gemini-3.7-flash` semantic call succeeded through the configured provider adapter
+(3,067 input tokens, 384 output tokens, approximately 6.15 seconds, no provider failure). Because the
+semantic bundle was `BUNDLE_PARTIAL`, its bounded suggestions—including
+`app.domain.mint_admission_pass`, `app.domain.bind_attendee_roster_row`, and related storage
+functions—remained non-authoritative; the developer explicitly confirmed
+`app.domain.mint_admission_pass`, producing `UNIQUE` / `HUMAN_CONFIRMED` authority. This was a live
+product-path smoke, not a benchmark or a change to the frozen semantic spike.
+
+Against the intentionally vulnerable merchant, the canonical run proved SG-01 `VERIFIED PASS` at E3,
+SG-02 and SG-03 `VERIFIED FAIL` at E3, and two actionable findings. SG-02 recorded one exact target entry
+and normal return for each of the initial and duplicate deliveries; other protected checks passed and
+optional/non-applicable assertions remained honestly `NOT APPLICABLE`. A real production Gemini
+remediation call then rebuilt current finding authority without blocking drift, produced a grounded
+explanation and bounded diff that moved event claiming before merchant mutation and customer-value
+execution, retained
+`AI-GENERATED — NOT VERIFIED`, and modified no merchant file. After the developer explicitly applied the
+corrected source, exact-key deterministic re-verification proved SG-02
+`VERIFIED FAIL → VERIFIED PASS` / `PROVEN_RESOLVED`; SG-03 also passed. The corrected run contained
+9 verified passes, no verified failures or unverified checks, zero findings, and honest
+`NOT APPLICABLE` assertions. The live CI run then returned `REQUIRED_CHECKS_PASSED` with exit 0.
+
+A genuine Razorpay Test Mode Payment created through Standard Checkout and its linked paid Order were
+successfully fetched, validated, and sanitized by the fetch-only grounding adapter. The Payment
+reported entity `payment`, status `captured`, `captured == true`, amount 100, and currency INR; the
+linked Order reported entity `order`, status `paid`, amount 100, amount paid 100, amount due 0, and
+currency INR. The E4-enabled canonical run produced 9 verified passes, no failures or unverified
+checks, 9/9 dynamic coverage, and zero findings. Only SG-01 was promoted to
+`E4 RAZORPAY GROUNDED` and displayed
+`TEST MODE RESOURCE PROFILE GROUNDED`; StateGuard still executed SG-01 locally and retained the explicit
+disclaimer that this was resource-profile grounding, not webhook-delivery evidence. SG-02 through SG-08
+remained E3. No credential, resource ID, signature, or customer/payment-method data was persisted.
+
+Managed runtime verification was optimized to ~4.2 seconds per canonical run. Independent repetition
+testing confirmed 5/5 vulnerable and 5/5 corrected cycles with 100% deterministic repeatability and zero
+resource leaks. The packaged distribution was independently verified via clean-room wheel smoke testing.
+
+The live ticketing walkthrough regression is fixed: schema-v3 findings retain the same
+relevance-scoped Step 10 current-authority rebuilding as schema v2, while schema v1 retains its
+conservative whole-authority fallback. Dashboard result/evidence contracts now use the canonical
+space-separated API values, so a backend-critical SG-02 `VERIFIED FAIL` at E3 remains eligible for
+bounded assistance and receives critical presentation. Non-`VERIFIED FAIL` findings remain
+ineligible; assistance remains non-authoritative and preview-only. The dashboard also now distinguishes
+a successful partial-bundle provider response from an actual provider failure.
+
+A dedicated concurrency feasibility pass concluded **NO-GO for Buildathon implementation**. The current
+managed runtime cannot product-generally prove that duplicate requests overlap at the race-sensitive
+event-identity decision boundary; simultaneous in-flight HTTP/ASGI requests are insufficient authority.
+A defensible implementation needs either an explicit merchant-visible synchronization contract or a
+substantial branch-level/runtime concurrency redesign. No SG-09, sleep-based race widening,
+scheduler-luck PASS, hidden demo hook, concurrent Razorpay claim, or Buildathon schema/runtime redesign
+will be added. Concurrency remains the highest-priority post-Buildathon runtime extension.
 
 ---
 
@@ -351,7 +396,9 @@ Not yet implemented:
   generic merchant late-state seeding, actual Razorpay webhook/retry/duplicate grounding,
   timing/timeout scenarios,
   targeted/change-impact verification, automatic patch application, autonomous remediation, or
-  concurrent scenario execution.
+  concurrent scenario execution. A proof-quality concurrent SG-02 assertion is explicitly deferred
+  after the Buildathon feasibility pass found no bounded product-general overlap mechanism in the
+  current runtime.
 
 Final Step 8 closure verification passed all 294 production tests, including SG-01 through SG-08,
 Step 7 evidence/storage authority, stable CLI/JSON/configuration surfaces, real CLI/HTTP run-history
@@ -628,16 +675,22 @@ Complete. `examples/ticketing_merchant` demonstrates:
 - bounded reset utility (`reset_demo.py`) with strict local containment.
 
 ### Step 13 — Stretch only if core is strong
-Pull from the deferred register in `STATEGUARD_CONTEXT.md`, starting with concurrency/race testing and optional Test Mode grounding.
+Bounded Razorpay Test Mode grounding is complete and live-proven. Concurrency/race testing remains the
+first post-Buildathon runtime stretch, but its current implementation decision is NO-GO for the
+submission window because deterministic race-window overlap requires a new explicit checkpoint
+contract or a substantially larger runtime-instrumentation design.
 
 ---
 
 ## 6. Immediate next work
 
-1. Hands-on user walkthrough of the ticketing merchant demo before final video narrative recording.
-2. Provider reliability was not run in Antigravity because GEMINI_API_KEY was unavailable in that environment; run one current live semantic-resolution and one remediation call before final video recording.
-3. Preserve deterministic verification authority, exact-key re-verification, and projection-only CI semantics.
-4. Keep workflow generation, targeted verification, automatic apply, and autonomous remediation deferred.
+1. Freeze Buildathon feature development; concurrency is NO-GO for the submission window and remains
+   the first post-Buildathon runtime stretch.
+2. Run one final coherent release/packaging gate after the live-walkthrough fixes and documentation
+   update.
+3. Finalize the five-minute demo narrative around the already live-proven workflow.
+4. Preserve deterministic authority, exact-key re-verification, E4's resource-profile-only meaning,
+   the five-route product surface, and the existing deferred scope boundaries.
 
 ---
 
@@ -724,10 +777,44 @@ Mitigation:
 - evaluation artifacts preserved.
 
 ### Production StateGuard
-- bounded Razorpay Test Mode E4 implementation gate: 365 passed, 1 explicitly unconfigured
-  credential-gated fetch-only smoke skipped; this includes adapter safety/error mapping,
+- live production semantic proof: one Gemini `gemini-3.7-flash` attempt succeeded with no provider
+  failure (3,067 input tokens, 384 output tokens, approximately 6.15 seconds). The
+  `BUNDLE_PARTIAL` result correctly remained a bounded suggestion set until explicit human
+  confirmation established `app.domain.mint_admission_pass` as `UNIQUE` / `HUMAN_CONFIRMED`;
+  this was a product-path smoke, not a benchmark,
+- live vulnerable ticketing proof: SG-01 passed at E3; SG-02 and SG-03 failed at E3; SG-02 showed
+  one entry and normal return for both the initial and duplicate deliveries to the exact confirmed
+  target; two actionable findings were produced,
+- live remediation/re-verification proof: one production Gemini remediation call rebuilt current
+  finding authority without blocking drift and returned a grounded explanation plus bounded
+  `AI-GENERATED — NOT VERIFIED` diff without modifying merchant source. After explicit developer
+  application, exact `VerificationCheckKey` correlation proved SG-02
+  `VERIFIED FAIL → VERIFIED PASS` / `PROVEN_RESOLVED`; SG-03 also passed. The corrected run had
+  9 verified passes, 0 failures, 0 unverified checks, and 0 findings; live CI returned
+  `REQUIRED_CHECKS_PASSED` with exit 0,
+- genuine Razorpay Test Mode E4 proof: the fetch-only adapter validated and sanitized one Payment
+  reporting amount 100/currency INR and its linked fully paid Order reporting amount 100, amount
+  paid 100, amount due 0, and currency INR. Canonical
+  verification completed with 9 verified passes, 0 failures, 0 unverified checks, 9/9 dynamic
+  coverage, and 0 findings. Only SG-01 was promoted to E4 resource-profile grounding; SG-02 through
+  SG-08 remained E3. One earlier run without the required demo webhook secret failed closed with
+  SG-01 `UNVERIFIED` and no E4 promotion before the environment was restored,
+- concurrency feasibility decision: NO-GO for Buildathon implementation. Concurrent request launch
+  alone cannot prove overlap at the event-identity decision boundary; a defensible explicit
+  checkpoint design was estimated at roughly 5–8 focused engineering days and a source-free async
+  branch/opcode design would require a substantially larger runtime redesign. The capability remains
+  first in the post-Buildathon runtime roadmap,
+- ticketing remediation regression gate: 23 focused remediation tests passed; 1 focused control-API
+  route test passed; the coherent remediation/evidence/control gate passed 35 tests; all 18 frontend
+  tests and TypeScript typecheck passed; Ruff lint/format and strict mypy across 101 production
+  source files passed; the production dashboard build completed with the existing >500 kB
+  chunk-size advisory. The earlier partial-bundle presentation correction also passed TypeScript,
+  11 frontend tests, and a production Vite build,
+- historical bounded Razorpay Test Mode E4 implementation gate: 365 passed, with 1 explicitly
+  unconfigured credential-gated fetch-only smoke skipped at that time; this includes adapter safety/error mapping,
   confidentiality, schema-v1/v2 run compatibility, SG-01 E3 degradation, E4 pass/fail promotion,
-  exact-key continuity, unchanged CI exit semantics, and dashboard v3 parsing,
+  exact-key continuity, unchanged CI exit semantics, and dashboard v3 parsing. The credential-gated
+  smoke was subsequently completed successfully as recorded above,
 - bounded E4 strict mypy: 101 production source files passed with 0 issues; Ruff lint and format
   check: 187 `src`/`tests` files passed with 0 errors,
 - bounded E4 frontend verification: 6 Vitest tests passed across 3 files, TypeScript typecheck passed,
@@ -745,7 +832,9 @@ Mitigation:
   - 5 vulnerable canonical cycles: min 4.17s, median 4.33s, max 4.46s (7 passes, SG-02 VERIFIED FAIL at E3, SG-03 VERIFIED FAIL at E3, 0 unverified),
   - 5 corrected canonical cycles: min 4.14s, median 4.20s, max 4.49s (9 VERIFIED PASS at E3, 0 failures, 0 unverified),
   - 10/10 runs passed with 100% clean process termination and zero leftover scratch directories or bound ports,
-- Step 12 provider reliability: `PROVIDER_RELIABILITY_NOT_RUN — GEMINI_API_KEY not available`,
+- historical Step 12 provider reliability note: the provider call was not run in the independent
+  Antigravity environment because `GEMINI_API_KEY` was unavailable there; this is superseded by the
+  successful live production semantic and remediation calls recorded above,
 - Step 12 wheel and sdist packaging: `dist/stateguard-0.1.0-py3-none-any.whl` (105 entries) and `dist/stateguard-0.1.0.tar.gz` (132 entries) with verified packaged dashboard assets and zero forbidden state/caches/secrets,
 - Step 12 clean-room installed-wheel smoke test: fresh isolated virtualenv verified CLI help, `analyze`, `serve` (all 5 routes returning 200 with CSP, static assets, control API, clean shutdown), `verify` (9 passes), and `verify --ci` (exit code 0, `REQUIRED_CHECKS_PASSED`),
 - Step 11 focused CI/CLI/architecture/control gate: 38 passed,

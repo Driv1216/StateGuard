@@ -35,3 +35,7 @@ policy:
     value: CAPTURE_REQUIRED
     evidence_fingerprint: 
       sha256:9dee269c3c6a4e407f8235afe89c506c07767eb1a0b302959d35de006fc54eef
+  late_authorisation:
+    value: DO_NOT_FULFIL
+    evidence_fingerprint:
+      sha256:b2f4d3a78ab074dd04c93d87e504c0566509ca67a4f52d0b8bc32af473c82413

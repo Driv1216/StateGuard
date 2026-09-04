@@ -321,7 +321,7 @@ def build_remediation_context(
     try:
         current = inspect_applicability(repository_root, config_path)
         drift = _whole_drift(run, current)
-        if run.schema_version == 2 and check.relevant_authority is not None:
+        if run.schema_version in {2, 3} and check.relevant_authority is not None:
             current_relevant = rebuild_current_finding_authority(
                 repository_root, config, check, current
             )

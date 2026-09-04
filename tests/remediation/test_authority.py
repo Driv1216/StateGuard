@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pytest
 
+from stateguard.applicability.contracts import ScenarioId
 from stateguard.application.applicability import confirm_merchant_policy, inspect_applicability
 from stateguard.application.semantics import confirm_customer_value, resolve_customer_value
 from stateguard.application.verification import create_verification_run
@@ -15,6 +16,8 @@ from stateguard.contracts.identity import new_project_id
 from stateguard.evidence.contracts import Finding, FindingKind
 from stateguard.failure_lab.contracts import EvidenceTier, VerificationResultState
 from stateguard.remediation.context_builder import (
+    RemediationNotEligibleError,
+    _select_verified_failure,
     build_remediation_context,
     rebuild_current_finding_authority,
     relevant_authority_blockers,
@@ -83,7 +86,7 @@ def _eligible_run(run, check):
     return run.model_copy(update={"checks": (failed,), "findings": (finding,)}), finding
 
 
-def test_unrelated_file_drift_does_not_block_v2_relevant_authority(tmp_path: Path) -> None:
+def test_unrelated_file_drift_does_not_block_current_relevant_authority(tmp_path: Path) -> None:
     repository, config_path, run, check = _run(tmp_path)
     (repository / "unrelated.py").write_text("def unrelated():\n    return 1\n", encoding="utf-8")
     current = inspect_applicability(repository, config_path, generated_at=NOW)
@@ -144,6 +147,88 @@ def test_context_separates_current_source_from_historical_only(
     assert historical.mode == AssistanceMode.HISTORICAL_EXPLANATION_ONLY
     assert historical.editable_regions == ()
     assert "merchant_source" not in historical.provider_input
+
+
+@pytest.mark.parametrize("schema_version", [2, 3])
+def test_current_schema_sg02_verified_fail_is_eligible_with_current_authority(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    schema_version: int,
+) -> None:
+    repository, config_path, run, _ = _run(tmp_path)
+    check = next(item for item in run.checks if item.scenario_id == ScenarioId.SG_02)
+    eligible, finding = _eligible_run(run, check)
+    eligible = eligible.model_copy(update={"schema_version": schema_version})
+    assert eligible.schema_version == schema_version
+    assert eligible.checks[0].scenario_id == ScenarioId.SG_02
+    assert eligible.checks[0].check_key == check.check_key
+    monkeypatch.setattr(
+        "stateguard.remediation.context_builder.load_verification_run",
+        lambda repository_root, run_id: eligible,
+    )
+
+    context = build_remediation_context(
+        repository, config_path, eligible.run_id, finding.occurrence_id
+    )
+
+    assert context.mode == AssistanceMode.CURRENT_SOURCE_REMEDIATION
+    assert context.check.check_key == check.check_key
+    assert context.current_relevant_fingerprint == context.historical_relevant_fingerprint
+
+
+@pytest.mark.parametrize(
+    "state",
+    [
+        VerificationResultState.VERIFIED_PASS,
+        VerificationResultState.STATIC_WARNING,
+        VerificationResultState.NEEDS_INPUT,
+        VerificationResultState.UNVERIFIED,
+        VerificationResultState.NOT_APPLICABLE,
+    ],
+)
+def test_non_verified_fail_check_results_remain_ineligible(
+    tmp_path: Path,
+    state: VerificationResultState,
+) -> None:
+    _, _, run, check = _run(tmp_path)
+    ineligible_check = check.model_copy(
+        update={
+            "result": state,
+            "evidence_tier": (
+                EvidenceTier.E3_DYNAMIC_VERIFIED
+                if state == VerificationResultState.VERIFIED_PASS
+                else None
+            ),
+        }
+    )
+    finding = Finding.model_construct(
+        occurrence_id="sgfinding_" + "c" * 32,
+        finding_key="sgfindingkey_" + "d" * 32,
+        check_id=ineligible_check.check_id,
+        check_key=ineligible_check.check_key,
+        kind=FindingKind.VERIFIED_FAILURE,
+        critical=True,
+    )
+    ineligible = run.model_copy(update={"checks": (ineligible_check,), "findings": (finding,)})
+
+    with pytest.raises(
+        RemediationNotEligibleError,
+        match="only critical VERIFIED FAIL findings are eligible",
+    ):
+        _select_verified_failure(ineligible, finding.occurrence_id)
+
+
+def test_noncritical_finding_remains_ineligible(tmp_path: Path) -> None:
+    _, _, run, check = _run(tmp_path)
+    eligible, finding = _eligible_run(run, check)
+    noncritical = finding.model_copy(update={"kind": FindingKind.STATIC_WARNING, "critical": False})
+    ineligible = eligible.model_copy(update={"findings": (noncritical,)})
+
+    with pytest.raises(
+        RemediationNotEligibleError,
+        match="only critical VERIFIED FAIL findings are eligible",
+    ):
+        _select_verified_failure(ineligible, noncritical.occurrence_id)
 
 
 def test_legacy_run_uses_whole_authority_only_as_conservative_fallback(

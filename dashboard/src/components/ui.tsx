@@ -36,13 +36,13 @@ export function StateMessage({ kind = "empty", title, children }: { kind?: "load
 
 export function StatusBadge({ value }: { value: ResultState | ApplicabilityState | string }) {
   const tone =
-    value === "VERIFIED_FAIL"
+    value === "VERIFIED FAIL"
       ? "critical"
-      : value === "VERIFIED_PASS"
+      : value === "VERIFIED PASS"
         ? "positive"
-        : value === "STATIC_WARNING"
+        : value === "STATIC WARNING"
           ? "warning"
-          : value === "NEEDS_INPUT" || value === "INDETERMINATE"
+          : value === "NEEDS INPUT" || value === "INDETERMINATE"
             ? "attention"
             : "neutral";
   return <span className={`badge badge-${tone}`}>{value.replaceAll("_", " ")}</span>;

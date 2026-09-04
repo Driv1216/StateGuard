@@ -103,6 +103,10 @@ function SafeGroundingEvidenceView({ grounding }: { grounding?: JsonRecord | nul
   </div>;
 }
 
+export function isRemediationEligible(finding: Finding, check?: RunCheck): boolean {
+  return finding.critical && check?.result === "VERIFIED FAIL";
+}
+
 function FindingDialog({ finding, check, fullRun, onClose }: { finding: Finding; check?: RunCheck; fullRun?: FullRun; onClose(): void }) {
   const state = useDashboardState();
   const actions = useDashboardActions();
@@ -112,7 +116,7 @@ function FindingDialog({ finding, check, fullRun, onClose }: { finding: Finding;
   const rules = fullRun?.authority.razorpay_rules?.referenced_rules.filter((rule) => check?.razorpay_rule_ids.includes(rule.rule_id)) ?? [];
   const assistance = state.remediation[finding.occurrence_id];
   const comparison = state.comparisons[finding.occurrence_id];
-  const eligible = finding.critical && check?.result === "VERIFIED_FAIL";
+  const eligible = isRemediationEligible(finding, check);
   return <Dialog title="Finding evidence" onClose={onClose}>
     {!check ? <StateMessage kind="error" title="Exact check unavailable">This finding could not be joined to a check in the selected backend report.</StateMessage> : <>
       <div className="button-row"><StatusBadge value={check.result} /><EvidenceBadge value={check.evidence_tier} /></div>

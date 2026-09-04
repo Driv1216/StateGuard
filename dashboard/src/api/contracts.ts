@@ -1,19 +1,19 @@
 export type JsonRecord = Record<string, unknown>;
 
 export type ResultState =
-  | "VERIFIED_PASS"
-  | "VERIFIED_FAIL"
-  | "STATIC_WARNING"
-  | "NEEDS_INPUT"
+  | "VERIFIED PASS"
+  | "VERIFIED FAIL"
+  | "STATIC WARNING"
+  | "NEEDS INPUT"
   | "UNVERIFIED"
-  | "NOT_APPLICABLE";
+  | "NOT APPLICABLE";
 
 export type EvidenceTier =
-  | "E0_DISCOVERED"
-  | "E1_RESOLVED"
-  | "E2_STATIC_VERIFIED"
-  | "E3_DYNAMIC_VERIFIED"
-  | "E4_RAZORPAY_GROUNDED";
+  | "E0 DISCOVERED"
+  | "E1 RESOLVED"
+  | "E2 STATIC VERIFIED"
+  | "E3 DYNAMIC VERIFIED"
+  | "E4 RAZORPAY GROUNDED";
 
 export type ApplicabilityState =
   | "APPLICABLE"
@@ -100,6 +100,13 @@ export interface SemanticOperation {
     resolution_fingerprint?: string | null;
     context?: { bundle_completeness: string; presented_symbol_ids: string[] };
     provider_failure?: { code: string; status_code?: number | null } | null;
+    partial_bundle_suggestions?: Array<{
+      symbol_id: string;
+      catalog_reference: string;
+      rationale: string;
+      excerpt_references: string[];
+      provider_confidence: number | null;
+    }>;
   };
   graph_fingerprint: string;
   selection_options: SemanticSelectionOption[];
